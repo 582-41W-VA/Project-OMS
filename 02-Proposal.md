@@ -36,5 +36,9 @@ Thank you once again for considering The-WP2 co for this project. We look forwar
 Warm regards,
 
 
-The-WP2 co.
-514-999-55-55 – 514-666-99-99
+### The-WP2 co.
+
+www.the-wp2co.com
+
+514-999-55-55
+
