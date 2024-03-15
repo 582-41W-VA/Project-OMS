@@ -16,7 +16,6 @@ With our team of experienced developers, designers, and project managers, we pro
 **Key Features of Our OMS Solution:**
 - Order entry capabilities with assignment options for departments or employees.
 - Sorting and management features for employees to update order progress.
-- Notifications for impending delays to prioritize critical orders.
 - Reporting tools for tracking order status and performance metrics.
 
 **Implementation Timeline:**
