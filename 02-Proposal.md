@@ -15,8 +15,8 @@ Our team comprises experienced stakeholders, developers, designers, and project 
 - **Moonhee Kim (Designer):** Moonhee Kim will lead the design team, overseeing wireframing, design, and prototyping activities to ensure the user interface meets the project requirements.
 - **Lesmy Perez (Designer):** Lesmy Perez will focus on UX/UI design, conducting research, and documenting design decisions to optimize user experience and interface usability.
 - **Andy Vo (Front-end Developer):** Andy Vo will leverage HTML, CSS, and JavaScript to create the front-end interface of the OMS, ensuring a responsive and intuitive user experience.
-- **Rishi Vijaybahadursingh Sisodia (Back-end Developer):** Rishi Vijaybahadursingh Sisodia will collaborate on the back-end development, utilizing JavaScript to implement functionality such as data processing, authentication, and database management.
-- **SK Tanveer Ali (Senior Full Stack Developer):** SK Tanveer Ali will lead the development efforts, using Python and Django to create the back-end infrastructure and integrate it with the front-end design to deliver a cohesive and scalable solution.
+- **Rishi Vijaybahadursingh Sisodia (Back-end Developer):** Rishi Vijaybahadursingh Sisodia will collaborate on the back-end development, utilizing JavaScript to implement functionality such as data processing, and database management.
+- **SK Tanveer Ali (Full Stack Developer):** SK Tanveer Ali will lead the development efforts, implementing authentication, and api integration using Python and Django to create the back-end infrastructure and integrate it with the front-end design to deliver a cohesive and scalable solution.
 
 
 ## End Users:
@@ -38,8 +38,8 @@ We also recognize the diverse roles and requirements of end-users, including com
 ## Technologies we will use:
 We will leverage a combination of technologies to create a robust, user-friendly, and scalable OMS solution.
 - **Front-end Development:** Andy Vo will utilize HTML, CSS, and JavaScript to create the user interface of the Order Management System, ensuring a responsive and interactive experience for end-users.
-- **Back-end Development:** Rishi Vijaybahadursingh Sisodia will leverage JavaScript for back-end development, implementing essential functionalities such as data processing, authentication, and database management to support the OMS.
-- **Full Stack Development:** SK Tanveer Ali, as the senior full-stack developer, will lead the development efforts using Python and Django. This robust stack will facilitate the creation of a scalable and efficient back-end infrastructure integrated seamlessly with the front-end design.
+- **Back-end Development:** Rishi Vijaybahadursingh Sisodia will leverage JavaScript for back-end development, implementing essential functionalities such as data processing, and database management to support the OMS.
+- **Full Stack Development:** SK Tanveer Ali, as the senior full-stack developer, will lead the development efforts using Python and Django. This robust stack will facilitate the creation of a scalable and efficient back-end infrastructure integrated seamlessly with the front-end design. This includes authentication, api integration, and database management.
 - **Design Tools:** Moonhee Kim and Lesmy Perez will utilize Adobe Suite and Figma for wireframing, design, prototyping, and documentation, ensuring a visually appealing and user-friendly interface for the Order Management System.
 
 ## Our Approach:
