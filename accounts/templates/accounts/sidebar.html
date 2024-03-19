@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="sidebar">
+  <img src="{% static 'images/logo.png' %}" alt="" width="100px" />
+  <a href="{% url 'home' %}">Dashboard</a>
+  <a href="#">Users</a>
+  <a href="#">Reports</a>
+
+  <span>Hello, {{request.user}}</span>
+  <span><a href="{% url 'logout' %}">Logout</a></span>
+</div>

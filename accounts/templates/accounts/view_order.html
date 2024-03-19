@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html' %} {% block content %}
+<main>
+  <h3>Title: {{orders.title}}</h3>
+  <img src="{{orders.image.url}}" alt="" width="300px" />
+  <p>Description: {{orders.description}}</p>
+  <p>Priority: {{orders.priority}}</p>
+  <p>Status: {{orders.status}}</p>
+  <p>Date Created: {{orders.date_created}}</p>
+
+  <a href="{% url 'update_order' orders.pk %}">Update</a>
+  <a href="{% url 'delete_order' orders.pk %}">Delete</a>
+</main>
+{% endblock %}

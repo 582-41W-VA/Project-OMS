@@ -1,0 +1,40 @@
+<h2>Orders</h2>
+
+<form action="" method="get">
+  {{myFilter.form}}
+  <button type="submit">Search</button>
+  <a href="{% url 'home' %}">Reset</a>
+</form>
+
+<!--Add New Order-->
+<a href="{% url 'create_order' %}">Create Order</a>
+
+<!-- Orders Table -->
+{% if orders %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Order No</th>
+      <th scope="col">Title</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Status</th>
+      <th scope="col">View</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in orders %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.title}}</td>
+      <td>{{i.priority}}</td>
+      <td>{{i.status}}</td>
+      <td><a href="{% url 'view_order' i.pk %}">View</a></td>
+      <td><a href="{% url 'update_order' i.pk %}">Update</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No orders found.</p>
+{% endif %}
