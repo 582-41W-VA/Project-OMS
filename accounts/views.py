@@ -51,7 +51,6 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-
 @login_required(login_url='login')
 def home(request):
     orders = Order.objects.all()
