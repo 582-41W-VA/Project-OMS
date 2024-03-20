@@ -9,7 +9,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
 from .forms import OrderForm, CreateUserForm
-from .filters import OrderFilter
+from .orderFilters import OrderFilter
+from .userFilters import UserFilter
 from .decorators import unauthenticated_user, allowed_users
 
 
@@ -47,9 +48,11 @@ def loginPage(request):
         context = {}
         return render(request, 'accounts/login.html', context)
 
+
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])
@@ -72,9 +75,20 @@ def home(request):
 
     return render(request, 'accounts/dashboard.html', context)
 
-def user(request):
-    context = {}
-    return render(request, 'account/user.html', context)
+
+@login_required(login_url='login')
+def userListPage(request):
+    users = User.objects.all()
+
+    myFilter = UserFilter(request.GET, queryset=users)
+    users = myFilter.qs
+
+    context = {'users': users,
+                'myFilter': myFilter
+                }
+
+    return render(request, 'accounts/users.html', context)
+
 
 @login_required(login_url='login')
 def order(request, pk):
@@ -82,6 +96,7 @@ def order(request, pk):
     context = {'orders': orders}
 
     return render(request, "accounts/view_order.html", context)
+
 
 @login_required(login_url='login')
 def createOrder(request):
@@ -94,6 +109,7 @@ def createOrder(request):
     
     context = {"form": form}
     return render(request, "accounts/order_form.html", context)
+
 
 @login_required(login_url='login')
 def updateOrder(request, pk):
