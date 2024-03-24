@@ -17,23 +17,28 @@ Our design principles are the foundation of this style guide. They include:
 
 ## Design Guide
 
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/main-laptop-github.jpg">
+
 ```text
 Wireframe
 ```
 
-<a hef="https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node-id=0%3A1&mode=design&t=XH8hYP2QPayb2PrO-1"><img src=""></a>
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-wireframe-github.jpg">
+<a hef="https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node-id=0%3A1&mode=design&t=XH8hYP2QPayb2PrO-1"></a>
 
 ```text
 Mockup
 ```
 
-<a hef="https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id=0%3A1&mode=design&t=dIvm4zkW50ypekKK-1"><img src=""></a>
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-mockup-github.jpg">
+<a hef="https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id=0%3A1&mode=design&t=dIvm4zkW50ypekKK-1"></a>
 
 ```text
 Mood Board
 ```
 
-<a hef="https://www.figma.com/file/4SUMQiUbQlC4oWWc634v9X/OMS-Mood-Board?type=design&node-id=0%3A1&mode=design&t=G2Eank73hsDZtCsn-1"><img src=""></a>
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-mood-board.jpg">
+<a hef="https://www.figma.com/file/4SUMQiUbQlC4oWWc634v9X/OMS-Mood-Board?type=design&node-id=0%3A1&mode=design&t=G2Eank73hsDZtCsn-1"></a>
 
 ## Usage
 
