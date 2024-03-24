@@ -24,21 +24,24 @@ Wireframe
 ```
 
 <img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-wireframe-github.jpg">
-<a hef="https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node-id=0%3A1&mode=design&t=XH8hYP2QPayb2PrO-1"></a>
+
+https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node-id=0%3A1&mode=design&t=XH8hYP2QPayb2PrO-1">
 
 ```text
 Mockup
 ```
 
 <img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-mockup-github.jpg">
-<a hef="https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id=0%3A1&mode=design&t=dIvm4zkW50ypekKK-1"></a>
+
+https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id=0%3A1&mode=design&t=dIvm4zkW50ypekKK-1">
 
 ```text
 Mood Board
 ```
 
 <img src="https://github.com/582-41W-VA/Project-OMS/blob/eddaffebc0eef8bd92d5cbaf7fe798d3aebf3a3a/assets/image/oms-mood-board.jpg">
-<a hef="https://www.figma.com/file/4SUMQiUbQlC4oWWc634v9X/OMS-Mood-Board?type=design&node-id=0%3A1&mode=design&t=G2Eank73hsDZtCsn-1"></a>
+
+https://www.figma.com/file/4SUMQiUbQlC4oWWc634v9X/OMS-Mood-Board?type=design&node-id=0%3A1&mode=design&t=G2Eank73hsDZtCsn-1">
 
 ## Usage
 
