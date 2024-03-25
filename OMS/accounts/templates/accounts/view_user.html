@@ -1,0 +1,13 @@
+{% extends 'accounts/main.html' %} {% block content %}
+<main>
+  <h3>Username: {{user.username}}</h3>
+
+  <p>Email: {{user.email}}</p>
+
+  <p>Date Joined: {{user.date_joined}}</p>
+  <p>Role: {{user.groups.first.name}}</p>
+
+  <a href="{% url 'update_user' user.pk %}">Change Role</a>
+  <a href="{% url 'delete_user' user.pk %}">Delete</a>
+</main>
+{% endblock %}

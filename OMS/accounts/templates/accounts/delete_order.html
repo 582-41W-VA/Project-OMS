@@ -1,11 +1,11 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 <main>
-  <p>Are you sure you want to delete "{{item.title}}"?</p>
+  <p>Are you sure you want to delete "{{order.title}}"?</p>
 
-  <form action="{% url 'delete_order' item.id %}" method="POST">
+  <form action="{% url 'delete_order' order.id %}" method="POST">
     {% csrf_token %}
     <input type="submit" name="Confirmed" value="Yes" />
-    <a href="{% url 'view_order' item.id %}">No</a>
+    <a href="{% url 'view_order' order.id %}">No</a>
   </form>
 </main>
 {% endblock %}

@@ -7,30 +7,33 @@
     <a href="{% url 'users' %}">Reset</a>
   </form>
 
+  <!--Add New User-->
+  <a href="{% url 'create_user' %}">Create User</a>
+
   {% if users %}
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">User ID</th>
         <th scope="col">Username</th>
         <th scope="col">Email</th>
+        <th scope="col">Role</th>
         <th scope="col">View</th>
-        <th scope="col">Update</th>
+        <th scope="col">Change Role</th>
       </tr>
     </thead>
     <tbody>
       {% for i in users %}
       <tr>
-        <th scope="row">{{i.id}}</th>
         <td>{{i.username}}</td>
         <td>{{i.email}}</td>
-        <!-- <td><a href="{% url 'view_order' i.pk %}">View</a></td>
-      <td><a href="{% url 'update_order' i.pk %}">Update</a></td> -->
+        <td>{{i.groups.first.name}}</td>
+        <td><a href="{% url 'view_user' i.pk %}">View</a></td>
+        <td><a href="{% url 'update_user' i.pk %}">Change Role</a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
   {% else %}
-  <p>No orders found.</p>
+  <p>No users found.</p>
   {% endif %} {% endblock content %}
 </main>

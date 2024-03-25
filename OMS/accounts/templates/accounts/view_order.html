@@ -6,6 +6,7 @@
   <p>Priority: {{orders.priority}}</p>
   <p>Status: {{orders.status}}</p>
   <p>Date Created: {{orders.date_created}}</p>
+  <p>Assigned To: {{orders.order_assigned_to}}</p>
 
   <a href="{% url 'update_order' orders.pk %}">Update</a>
   <a href="{% url 'delete_order' orders.pk %}">Delete</a>

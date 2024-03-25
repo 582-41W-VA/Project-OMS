@@ -1,0 +1,14 @@
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<main>
+  <h2>Update User</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+
+    <label for="Roles">Select Role:</label><br />
+    {{ form.groups }}
+
+    <input type="submit" value="Submit" />
+    <a href="{% url 'users' %}">Cancel</a>
+  </form>
+</main>
+{% endblock %}

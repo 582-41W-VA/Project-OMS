@@ -5,6 +5,7 @@ from django.db.models import F
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
@@ -53,9 +54,10 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
+####DASHBOARD####
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin', 'manager', 'worker'])
 def home(request):
     orders = Order.objects.all()
 
@@ -77,21 +79,7 @@ def home(request):
 
 
 @login_required(login_url='login')
-def userListPage(request):
-    users = User.objects.all()
-
-    myFilter = UserFilter(request.GET, queryset=users)
-    users = myFilter.qs
-
-    context = {'users': users,
-                'myFilter': myFilter
-                }
-
-    return render(request, 'accounts/users.html', context)
-
-
-@login_required(login_url='login')
-def order(request, pk):
+def viewOrder(request, pk):
     orders = get_object_or_404(Order, pk=pk)
     context = {'orders': orders}
 
@@ -131,6 +119,69 @@ def deleteOrder(request, pk):
         order.delete()
         return redirect('/')
 
-    context = {'item': order}
-    return render(request, 'accounts/delete.html', context)
+    context = {'order': order}
+    return render(request, 'accounts/delete_order.html', context)
 
+
+####USERS#####
+
+@login_required(login_url='login')
+def userListPage(request):
+    users = User.objects.all().order_by('-date_joined')
+
+    myFilter = UserFilter(request.GET, queryset=users)
+    users = myFilter.qs
+
+    context = {'users': users,
+                'myFilter': myFilter
+                }
+
+    return render(request, 'accounts/users.html', context)
+
+
+@login_required(login_url='login')
+def viewUser(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    groups = user.groups.all()
+    context = {'user': user, 'groups': groups}
+
+    return render(request, 'accounts/view_user.html', context)
+    
+
+@login_required(login_url='login')
+def createUser(request):
+    form = CreateUserForm()
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/users')
+    
+    context = {"form": form}
+
+    return render(request, 'accounts/user_form.html', context)
+
+@login_required(login_url='login')
+def updateUser(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    form = CreateUserForm(instance=user)
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('/view_user', pk=pk)
+
+    context = {'form': form}
+    return render(request, 'accounts/update_user_form.html', context)
+
+
+@login_required(login_url='login')
+def deleteUser(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if request.method == "POST":
+        user.delete()
+        return redirect('/users')
+
+    context = {'user': user}
+    return render(request, 'accounts/delete_user.html', context)

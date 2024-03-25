@@ -13,7 +13,7 @@ class OrderFilter(django_filters.FilterSet):
     class Meta:
         model = Order
         fields = '__all__'
-        exclude = ['title', 'image', 'description', 'date_created']
+        exclude = ['title', 'image', 'description', 'date_created', 'created_by']
         filter_overrides = {
             django_filters.CharFilter: {
                 'filter_class': django_filters.CharFilter,
@@ -22,7 +22,7 @@ class OrderFilter(django_filters.FilterSet):
                 },
             },
         }
-        order_by = ['search', 'priority', 'status', 'sort_by_date'] 
+        
 
     def custom_search(self, queryset, name, value):
         return queryset.filter(
