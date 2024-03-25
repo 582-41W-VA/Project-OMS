@@ -17,7 +17,7 @@ Our design principles are the foundation of this style guide. They include:
 
 ## Design Guide
 
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/main-laptop-github.jpg"> /
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/main-laptop-github.jpg">
 <img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/mobile-mockup-github.jpg">
 
 
