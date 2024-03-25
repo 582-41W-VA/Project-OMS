@@ -17,15 +17,15 @@ Our design principles are the foundation of this style guide. They include:
 
 ## Design Guide
 
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/a30dac2b1de9bdd948a78fbdb5e8e5c141517be2/OMS/static/images/main-laptop-github.jpg"> /
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/a30dac2b1de9bdd948a78fbdb5e8e5c141517be2/OMS/static/images/mobile-mockup-github.jpg">
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/main-laptop-github.jpg"> /
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/mobile-mockup-github.jpg">
 
 
 ```text
 Wireframe
 ```
 
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/a30dac2b1de9bdd948a78fbdb5e8e5c141517be2/OMS/static/images/oms-wireframe-github.jpg">
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/oms-wireframe-github.jpg">
 
 https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node-id=0%3A1&mode=design&t=XH8hYP2QPayb2PrO-1">
 
@@ -33,7 +33,7 @@ https://www.figma.com/file/Dhd6pTTrk6uMx27Zg2uzpH/OMS-Wireframe?type=design&node
 Mockup
 ```
 
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/a30dac2b1de9bdd948a78fbdb5e8e5c141517be2/OMS/static/images/oms-mockup-github.jpg">
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/oms-mockup-github.jpg">
 
 https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id=0%3A1&mode=design&t=dIvm4zkW50ypekKK-1">
 
@@ -41,7 +41,7 @@ https://www.figma.com/file/Vghuqu0nBmlgZeKW8nFIwN/OMS-Mockup?type=design&node-id
 Mood Board
 ```
 
-<img src="https://github.com/582-41W-VA/Project-OMS/blob/a30dac2b1de9bdd948a78fbdb5e8e5c141517be2/OMS/static/images/oms-mood-board.jpg">
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/f6904964e52e6707d315c117ed4376d15d74533d/OMS/static/images/oms-mood-board.jpg">
 
 https://www.figma.com/file/4SUMQiUbQlC4oWWc634v9X/OMS-Mood-Board?type=design&node-id=0%3A1&mode=design&t=G2Eank73hsDZtCsn-1">
 
