@@ -1,0 +1,49 @@
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<main>
+  <h2>Create New User</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label><br />
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="{{ form.username.label }}"
+      required
+    /><br />
+
+    <label for="email">Email:</label><br />
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="{{ form.email.label }}"
+      required
+    /><br />
+
+    <label for="password1">Password:</label><br />
+    <input
+      type="password"
+      id="password1"
+      name="password1"
+      placeholder="{{ form.password1.label }}"
+      required
+    /><br />
+
+    <label for="password2">Confirm Password:</label><br />
+    <input
+      type="password"
+      id="password2"
+      name="password2"
+      placeholder="{{ form.password2.label }}"
+      required
+    /><br />
+
+    <label for="Roles">Select Role:</label><br />
+    {{ form.groups }}
+
+    <input type="submit" value="Create User" />
+    <a href="{% url 'users' %}">Cancel</a>
+  </form>
+</main>
+{% endblock %}
