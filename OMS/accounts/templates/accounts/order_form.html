@@ -1,0 +1,9 @@
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<main>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" name="Submit" />
+    <a href="{% url 'home' %}">Cancel</a>
+  </form>
+</main>
+{% endblock %}
