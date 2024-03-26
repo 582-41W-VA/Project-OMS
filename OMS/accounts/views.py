@@ -9,9 +9,7 @@ from django.contrib.auth.models import Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
-
 from .forms import OrderForm, CreateUserForm, UpdateUserForm
-
 from .orderFilters import OrderFilter
 from .userFilters import UserFilter
 from .decorators import unauthenticated_user, allowed_users
@@ -19,7 +17,6 @@ from .decorators import unauthenticated_user, allowed_users
 
 @unauthenticated_user
 def registerPage(request):
-
     form = CreateUserForm()
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -168,7 +165,6 @@ def createUser(request):
 @login_required(login_url='login')
 def updateUser(request, pk):
     user = get_object_or_404(User, pk=pk)
-
     form = UpdateUserForm(instance=user)
 
     if request.method == 'POST':
