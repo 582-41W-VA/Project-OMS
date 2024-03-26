@@ -4,6 +4,12 @@
   <form action="" method="POST">
     {% csrf_token %}
 
+    <h3>Username: {{user.username}}</h3>
+
+    <p>Email: {{user.email}}</p>
+
+    <p>Date Joined: {{user.date_joined}}</p>
+
     <label for="Roles">Select Role:</label><br />
     {{ form.groups }}
 

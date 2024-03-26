@@ -1,0 +1,190 @@
+/* ------------------------- Style-guide CSS ------------------------------------------------------------ */
+
+/* design_guide/css/style.css */
+
+/* ------------------------- fonts ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ------------------------- Colors -------------------------------------------------- */
+:root {
+    --color-text: #1C1D20;
+    --color-text-light: #FFF;
+
+    --color-dark: #191919;
+    --color-gray: #999D9E;
+    --color-light: #FFFFFF;
+
+    --color-dark-dark: #141517;
+    --color-blue: #35447D;
+    --color-blue-dark: #192D45;
+    --color-blue-light-dark: #7990A3; /* apply to icons inside the sidebar section */
+    --color-blue-light: #E9EEF4;    /* apply to the body background */
+
+
+    --color-urgent: #EA5455;     /* apply to yes button for deleting */
+    --color-normal: #6AAEBA;
+    --color-pending: #C8B534;
+    --color-profile: #CBC5C5;
+    --color-orders: #2647C8;
+
+    --color-normal-button: #768DC7;
+    --color-edit: #FBAB41;
+    --color-update: #6AB0BA;
+    --color-delete: #7990A3;      /* apply to cancel button */
+
+
+    --color-border-solid: #D2D2D2;
+    --color-border-solid-light: #545557;
+}
+
+
+/* ------------------------- Typography -------------------------------------------------- */
+
+h1 {
+    font-family: "DM Serif Display", sans-serif;
+    font-size: 5.5rem;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* Responsive design **************************/
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4.2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    h1 {
+        font-size: 3.8rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+}
+
+
+/* ------------------------- Body -------------------------------------------------- */
+*,
+*:after,
+*:before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: clamp(16px, 1.2vw, 19px);
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-text);
+}
+
+section {
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-style: none;
+    object-fit: cover;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--color-border-solid);
+    margin: 1rem 0;
+    padding: 0;
+}
+
+
+/* ------------------------- Buttons -------------------------------------------------- */
+
+/* --- Button Normal --- */
+
+
+/* --- Button Link --- */
+
+
+/* --- Button Icon --- */
+
