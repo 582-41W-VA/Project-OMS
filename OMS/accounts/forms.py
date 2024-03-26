@@ -10,8 +10,13 @@ class OrderForm(ModelForm):
         fields = ['title', 'image', 'description', 'priority', 'status', 'order_assigned_to']
 
 class CreateUserForm(UserCreationForm):
-    groups = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
-
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2', 'groups']
+
+class UpdateUserForm(forms.ModelForm):
+    groups = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), widget=forms.CheckboxSelectMultiple, required=False)
+    
+    class Meta:
+        model = User
+        fields = ['groups']

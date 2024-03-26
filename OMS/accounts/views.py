@@ -9,7 +9,7 @@ from django.contrib.auth.models import Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import *
-from .forms import OrderForm, CreateUserForm
+from .forms import OrderForm, CreateUserForm, UpdateUserForm
 from .orderFilters import OrderFilter
 from .userFilters import UserFilter
 from .decorators import unauthenticated_user, allowed_users
@@ -126,7 +126,9 @@ def deleteOrder(request, pk):
 
 @login_required(login_url='login')
 def userListPage(request):
-    users = User.objects.all().order_by('-date_joined')
+    admin_group = Group.objects.get(name='admin')
+
+    users = User.objects.order_by('-date_joined')
 
     myFilter = UserFilter(request.GET, queryset=users)
     users = myFilter.qs
@@ -163,13 +165,15 @@ def createUser(request):
 @login_required(login_url='login')
 def updateUser(request, pk):
     user = get_object_or_404(User, pk=pk)
-    form = CreateUserForm(instance=user)
+    form = UpdateUserForm(instance=user)
 
     if request.method == 'POST':
-        form = CreateUserForm(request.POST, instance=user)
+        form = UpdateUserForm(request.POST, instance=user)
         if form.is_valid():
+            selected_roles = form.cleaned_data.get('groups')  # Get selected roles
+            print("Selected roles:", selected_roles)
             form.save()
-            return redirect('/view_user', pk=pk)
+            return redirect('view_user', pk=pk)
 
     context = {'form': form}
     return render(request, 'accounts/update_user_form.html', context)
@@ -178,9 +182,14 @@ def updateUser(request, pk):
 @login_required(login_url='login')
 def deleteUser(request, pk):
     user = get_object_or_404(User, pk=pk)
+
+    if user.is_superuser:
+        messages.error(request, "Cannot delete superuser.")
+        return redirect('users')
+
     if request.method == "POST":
         user.delete()
-        return redirect('/users')
+        return redirect('users')
 
     context = {'user': user}
     return render(request, 'accounts/delete_user.html', context)
