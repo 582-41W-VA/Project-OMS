@@ -1,14 +1,35 @@
 {% extends 'accounts/main.html' %} {% block content %}
 <main>
-  <h3>Title: {{orders.title}}</h3>
-  <img src="{{orders.image.url}}" alt="" width="300px" />
-  <p>Description: {{orders.description}}</p>
-  <p>Priority: {{orders.priority}}</p>
-  <p>Status: {{orders.status}}</p>
-  <p>Date Created: {{orders.date_created}}</p>
-  <p>Assigned To: {{orders.order_assigned_to}}</p>
+  <h3>Title: {{order.title}}</h3>
+  <img src="{{order.image.url}}" alt="" width="300px" />
+  <p>Description: {{order.description}}</p>
+  <p>Priority: {{order.priority}}</p>
+  <p>Status: {{order.status}}</p>
+  <p>Date Created: {{order.date_created}}</p>
+  <p>Assigned To: {{order.order_assigned_to}}</p>
 
-  <a href="{% url 'update_order' orders.pk %}">Update</a>
-  <a href="{% url 'delete_order' orders.pk %}">Delete</a>
+  <a href="{% url 'update_order' order.pk %}">Update</a>
+  <a href="{% url 'delete_order' order.pk %}">Delete</a>
+
+  <form action="{% url 'add_comment' order.pk %}" method="POST">
+    {% csrf_token %}
+    <fieldset>
+      <legend>Add a comment</legend>
+
+      <label>
+        Comment
+        <textarea type="textarea" name="comment_text" required></textarea>
+        <button>Submit</button>
+      </label>
+    </fieldset>
+  </form>
+
+  {% for comment in comments %}
+  <hr />
+  <h4>{{ comment.user }}</h4>
+  <p>{{ comment.comment_text }}</p>
+  <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+
+  {% endfor %}
 </main>
 {% endblock %}

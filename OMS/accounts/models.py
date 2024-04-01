@@ -27,9 +27,9 @@ class Order(models.Model):
 
 class Comment(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    commentText = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='comments')
+    comment_text = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True, null=True)
-    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return str(self.commentText)[:20]
+        return f"{self.comment_text} - {self.user}"
