@@ -1,0 +1,10 @@
+{% load static %}
+<section class="topbar">
+  <div class="left-content">
+    <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i>Dashboard</a>
+  </div>
+  <div class="right-content">
+    <span>Hello, {{request.user}}</span>
+    <span><a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></span>
+  </div>
+</section>
