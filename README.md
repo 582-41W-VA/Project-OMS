@@ -177,11 +177,14 @@ This command will start the Django development server, and your project will be 
 - manager
 - worker
 
----INSERT HERE  URL create-grops.png
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/0e586733e7e954bf7bca0878a6ad5122100b0d2e/OMS/static/images/create_goups.png">
 
 6. In Users, select the superuser created and add admin permissions:
 
----INSERT HERE  URL permissions1.png and permissions2.png
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/0e586733e7e954bf7bca0878a6ad5122100b0d2e/OMS/static/images/permissions1.png">
+
+
+<img src="https://github.com/582-41W-VA/Project-OMS/blob/0e586733e7e954bf7bca0878a6ad5122100b0d2e/OMS/static/images/permissions2.png">
 
 7. Go to homepage http://localhost:8000/ to start the application.
 
