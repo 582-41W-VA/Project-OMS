@@ -135,3 +135,130 @@ aside {
     visibility: visible;
     width: 100%;
 }
+
+/* order status section styling */
+
+.status, .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap : 10px;
+    width: 100%;
+}
+
+.status-cards {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  align-items: flex-start;
+  width: 85%;
+
+}
+
+.status-cards .card {
+  padding: 10px;
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: row; 
+  width: auto;
+  height: 135px;
+  flex-grow: 1; 
+  border-radius: 25px;
+  border: none;
+}
+
+.status-cards .card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.status-cards .card p {
+  background-color: var(--color-light);
+  color: var(--color-text);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#urgent {
+  background: url(../images/urgent-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#regular {
+  background: url(../images/normal-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#pending {
+  background: url(../images/pending-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;  
+}
+
+.add-profile, .add-order {
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-profile{
+  background-color: #cbc5c5;
+}
+
+.add-profile:hover {
+  transform: scale(1.05);
+}
+
+.add-order {
+  background-color: var(--color-blue);
+  color: var(--color-text-light);
+}
+
+.add-order:hover {
+  transform: scale(1.05);
+}
+
+.add-profile a, .add-order a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.add-profile a:hover{
+  color: #4e4e4e;
+}
+.add-order a:hover {
+  color: #d8d8d8; 
+}
+
+.fa-circle-plus {
+  font-size: 20px;
+  margin-left: 10px;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.fa-circle-plus:hover {
+  color: #ffffff; 
+  transform: scale(1.2); 
+}
