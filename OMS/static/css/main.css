@@ -262,3 +262,168 @@ aside {
   color: #ffffff; 
   transform: scale(1.2); 
 }
+
+
+/* Orders section styling */
+
+.orders-main h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
+.orders-filter {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.order-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px
+}
+
+.order-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar-container {
+  display: flex;
+  border: 1px solid var(--color-border-solid-light);
+  border-radius: 10px;
+  padding: 0 5px;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 300px;
+}
+
+ ::placeholder {
+  color: var(--color-normal-button);
+  opacity: 1;
+}
+
+.search-button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-normal-button);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.reset-button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-normal-button);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px; 
+  margin-top: 25px;
+}
+
+.search-button i{
+  color: white;
+  font-size: 16px;
+}
+
+.reset-button i{
+  color: white;
+  font-size: 16px;
+}
+
+.order-form label {
+  color: var(--color-normal-button);
+  margin-bottom: 5px;
+}
+
+.order-form select,
+.order-form option {
+  border-radius: 5px;
+  color: var(--color-normal-button);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+}
+
+.orders-table thead tr {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  text-align: left;
+}
+
+.orders-table thead tr th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.orders-table thead tr th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 10px solid var(--color-blue-light);
+}
+
+.orders-table tbody td, th {
+  padding: 0px 20px;
+}
+
+.orders-table th {
+  font-weight: 600;
+}
+
+.orders-table tr {
+  cursor: pointer;
+  background-color: var(--color-light);
+  color: #35447d;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.view,
+.update {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px;
+}
+
+.view i,
+.update i {
+  pointer-events: none;
+}
+
+.fa-eye {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.fa-pen-to-square {
+  background-color: var(--color-normal-button);
+  color: var(--color-text-light);
+  padding: 10px;
+  border-radius: 10px;
+}

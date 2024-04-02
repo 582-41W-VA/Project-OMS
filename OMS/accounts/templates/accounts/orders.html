@@ -1,17 +1,28 @@
-<h2>Orders</h2>
+{% load static %}
 
-<form action="" method="GET">
-  {{myFilter.form}}
-  <button type="submit">Search</button>
-  <a href="{% url 'home' %}">Reset</a>
+<section class="orders-main">
+  <div class="orders-filter">
+  <div class="order-search">
+  <h3>Orders</h3>
+  <form action="" method="GET" class="search-bar-container">
+    <input type="text" placeholder="Search orders..." class="search-input" name="search" id="id_search" />
+    <button type="submit" class="search-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
 </form>
 
-<!--Add New Order-->
-<a href="{% url 'create_order' %}">Create Order</a>
 
+</div>
+<form action="" method="GET" class="order-form">
+  {{myFilter.form}}
+  
+  <a href="{% url 'home' %}" class="reset-button"><i class="fa-solid fa-arrows-rotate"></i></a>
+</form>
+</div>
 <!-- Orders Table -->
 {% if orders %}
-<table class="table">
+
+<table class="orders-table">
   <thead>
     <tr>
       <th scope="col">Order No</th>
@@ -29,8 +40,8 @@
       <td>{{i.title}}</td>
       <td>{{i.priority}}</td>
       <td>{{i.status}}</td>
-      <td><a href="{% url 'view_order' i.pk %}">View</a></td>
-      <td><a href="{% url 'update_order' i.pk %}">Update</a></td>
+      <td><a href="{% url 'view_order' i.pk %}" class="view"><i class="fa-solid fa-eye"></i></a></td>
+      <td><a href="{% url 'update_order' i.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a></td>
     </tr>
     {% endfor %}
   </tbody>
@@ -38,3 +49,4 @@
 {% else %}
 <p>No orders found.</p>
 {% endif %}
+</section>
