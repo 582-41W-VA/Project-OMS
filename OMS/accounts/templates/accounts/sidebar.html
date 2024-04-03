@@ -3,8 +3,10 @@
 <div class="sidebar">
   <img src="{% static 'images/logo.svg' %}" alt="" width="100px" />
   <a href="{% url 'home' %}">Dashboard</a>
+  {% if request.user.groups.first.name == 'admin' %}
   <a href="{% url 'users' %}">Users</a>
   <a href="#">Reports</a>
+  {% endif %}
 
   <span>Hello, {{request.user}}</span>
   <span><a href="{% url 'logout' %}">Logout</a></span>

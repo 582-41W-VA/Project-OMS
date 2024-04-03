@@ -7,7 +7,11 @@
 </form>
 
 <!--Add New Order-->
+{% if request.user.groups.first.name == 'admin' %}
 <a href="{% url 'create_order' %}">Create Order</a>
+{% endif %} {% if request.user.groups.first.name == 'manager' %}
+<a href="{% url 'create_order' %}">Create Order</a>
+{% endif %}
 
 <!-- Orders Table -->
 {% if orders %}
