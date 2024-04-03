@@ -1,18 +1,35 @@
+{% load static %}
 <div class="status">
   <div class="container">
     <div class="status-cards">
-      <div class="card">
+      <div class="card" id="urgent">
+        <div class="text">
         <h3>Urgent</h3>
         <p>{{urgent}}</p>
+        </div>
+        
       </div>
-      <div class="card">
+      <div class="card" id="regular">
+        <div class="text">
         <h3>Normal</h3>
         <p>{{regular}}</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Total Pending</h3>
+      <div class="card" id="pending">
+        <div class="text">
+        <h3>Pending</h3>
         <p>{{total_pending}}</p>
+        </div>
       </div>
+    </div>
+    <div class="profile-card">
+      <div class="add-profile">
+        <a href="">Profile<i class="fa-solid fa-circle-plus"></i></a>
+      </div>
+      <div class="add-order">
+        <a href="{% url 'create_order' %}">Order<i class="fa-solid fa-circle-plus"></i></a>
+      </div>
+
     </div>
   </div>
 </div>

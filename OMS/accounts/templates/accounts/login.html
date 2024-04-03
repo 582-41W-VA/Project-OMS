@@ -1,16 +1,24 @@
-<h2>Login</h2>
+{%load static%}
+<head>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<section class="login-page">
+  <div class="left">
+  <img src="{% static 'images/main-logo.svg' %}" alt="_blank" srcset="">
+  <h3>Welcome Back !</h3>
+  <p>Sign in to continue to OMS</p>
 <form action="" method="POST">
   {% csrf_token %}
-  <label for="username">Username:</label><br />
+  <label for="username">Username</label>
   <input
     type="text"
     id="username"
     name="username"
     placeholder="Enter your username"
     required
-  /><br />
+  />
 
-  <label for="password">Password:</label><br />
+  <label for="password">Password</label>
   <input
     type="password"
     id="password"
@@ -25,4 +33,12 @@
 
   <input type="submit" value="Login" />
 </form>
-<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<p>Don't have an account? <a href="{% url 'register' %}">Signup now</a></p>
+
+  </div>
+
+  <div class="right">
+    <img src="{% static 'images/login-bg.png' %}" alt="login" />
+  </div>
+</section>
+

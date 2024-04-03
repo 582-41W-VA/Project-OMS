@@ -194,4 +194,3 @@ All contributions are welcome. Pull request will be reviewed before merging.
 
 ## License
 
-all rights reserved
