@@ -50,11 +50,25 @@ main, footer {
     text-decoration: none;
 }
 
-.left-content, .right-content {
+.left-content {
+    display: flex; 
+    align-items: center; 
+    padding-left: 245px;
+}
+
+.left-content img {
+    margin-right: 10px;
+}
+
+.left-content p {
+    font-size: 16px;
+    color: var(--color-blue-light-dark);
+    margin: 0;
+}
+
+ .right-content {
     display: flex;
     align-items: center;
-    padding: 5px 10px;
-    padding-left: 245px;
 }
 
 .right-content span {
@@ -66,14 +80,13 @@ main, footer {
     color: var( --color-normal-button);
 }
 
-.fa-right-from-bracket{
-    color: var(--color-normal-button);
-    transition: all 0.3s ease-in-out;
+.right-content img {
+    transition: all 0.5s ease-in-out;
     margin-right: 10px
   }
   
 
-.fa-right-from-bracket:hover {
+.right-content img:hover {
     transform: rotate(360deg) scale(1.2);
     
 }

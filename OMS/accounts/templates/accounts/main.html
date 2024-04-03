@@ -18,6 +18,9 @@
 
     <link rel="stylesheet" href="{% static '/css/main.css' %}" />
   </head>
+  <header>
+  {% include 'accounts/header.html' %}
+</header>
   <body>
     {% include 'accounts/sidebar.html' %} {% block content %} {% endblock %}
 

@@ -1,10 +1,13 @@
 {% load static %}
 <section class="topbar">
   <div class="left-content">
-    <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i>Dashboard</a>
+    
+    <img src="{% static 'images/dashboard-dark.svg' %}" href="{% url 'home' %}" alt="" srcset="">
+      <p>Dashboard</p>
+      
   </div>
   <div class="right-content">
     <span>Hello, {{request.user}}</span>
-    <span><a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a></span>
+    <span><img href="{% url 'logout' %}" src="{% static 'images/log-out.svg' %}" alt="logout" ></span>
   </div>
 </section>
