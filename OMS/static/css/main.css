@@ -1,47 +1,442 @@
+/* import style css - This is style guide file.*/
+@import url('style.css');
+/* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-      /* Custom styles for the sidebar */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 100;
-        padding: 48px 50px;
-        background-color: #f8f9fa;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-      /* Style the links inside the sidebar */
-      .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        color: #333;
-        display: block;
-      }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: #e9eef4;
+}
 
-      /* Change the color of links on hover */
-      .sidebar a:hover {
-        background-color: #e9ecef;
-      }
+a {
+    text-decoration: none;
+}
 
-      main,
-      footer {
-        padding-left: 250px;
-      }
+aside, main, footer {
+    padding: 20px;
+}
 
-      .status {
-        height: 200px;
-        border: 2px solid black;
-      }
+main, footer {
+    padding-left: 230px;
+}
 
-      .status-cards {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+/* topbar styling */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-light);
+    padding: 10px 0;
+}
 
-      .status-cards .cards {
-        border: 2px solid grey;
-        padding: 20px 20px;
-      }
+.topbar img {
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+}
+
+.topbar h3, .topbar a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.left-content {
+    display: flex; 
+    align-items: center; 
+    padding-left: 245px;
+}
+
+.left-content img {
+    margin-right: 10px;
+}
+
+.left-content p {
+    font-size: 16px;
+    color: var(--color-blue-light-dark);
+    margin: 0;
+}
+
+ .right-content {
+    display: flex;
+    align-items: center;
+}
+
+.right-content span {
+    margin-right: 10px;
+}
+
+.fa-house {
+    margin-right: 10px;
+    color: var( --color-normal-button);
+}
+
+.right-content img {
+    transition: all 0.5s ease-in-out;
+    margin-right: 10px
+  }
   
+
+.right-content img:hover {
+    transform: rotate(360deg) scale(1.2);
+    
+}
+
+/* sidebar styling */
+
+aside {
+    background: linear-gradient(178.24deg, #192d45, #35447d);
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar .logo {
+    width: 100px;
+    margin: 50px;
+}
+
+.icon-link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-link img {
+    width: 30px;
+}
+
+.sidebar a {
+    margin-bottom: 20px;
+    color: white;
+    position: relative;
+    text-decoration: none;
+}
+
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 14px;
+    left: 0;
+    background-color:white;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar a:hover::after {
+    visibility: visible;
+    width: 100%;
+}
+
+/* order status section styling */
+
+.status, .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap : 10px;
+    width: 100%;
+}
+
+.status-cards {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+  align-items: flex-start;
+  width: 85%;
+
+}
+
+.status-cards .card {
+  padding: 10px;
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: row; 
+  width: auto;
+  height: 135px;
+  flex-grow: 1; 
+  border-radius: 25px;
+  border: none;
+}
+
+.status-cards .card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.status-cards .card p {
+  background-color: var(--color-light);
+  color: var(--color-text);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#urgent {
+  background: url(../images/urgent-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#regular {
+  background: url(../images/normal-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#pending {
+  background: url(../images/pending-card.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;  
+}
+
+.add-profile, .add-order {
+  border-radius: 10px;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-profile{
+  background-color: #cbc5c5;
+}
+
+.add-profile:hover {
+  transform: scale(1.05);
+}
+
+.add-order {
+  background-color: var(--color-blue);
+  color: var(--color-text-light);
+}
+
+.add-order:hover {
+  transform: scale(1.05);
+}
+
+.add-profile a, .add-order a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.add-profile a:hover{
+  color: #4e4e4e;
+}
+.add-order a:hover {
+  color: #d8d8d8; 
+}
+
+.fa-circle-plus {
+  font-size: 20px;
+  margin-left: 10px;
+  color: var(--color-text-light);
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.fa-circle-plus:hover {
+  color: #ffffff; 
+  transform: scale(1.2); 
+}
+
+
+/* Orders section styling */
+
+.orders-main h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
+.orders-filter {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.order-search {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px
+}
+
+.order-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar-container {
+  display: flex;
+  border: 1px solid var(--color-border-solid-light);
+  border-radius: 10px;
+  padding: 0 5px;
+  align-items: center;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 300px;
+}
+
+ ::placeholder {
+  color: var(--color-normal-button);
+  opacity: 1;
+}
+
+.search-button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-normal-button);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.reset-button{
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-normal-button);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px; 
+  margin-top: 25px;
+}
+
+.search-button i{
+  color: white;
+  font-size: 16px;
+}
+
+.reset-button i{
+  color: white;
+  font-size: 16px;
+}
+
+.order-form label {
+  color: var(--color-normal-button);
+  margin-bottom: 5px;
+}
+
+.order-form select,
+.order-form option {
+  border-radius: 5px;
+  color: var(--color-normal-button);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+}
+
+.orders-table thead tr {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  text-align: left;
+}
+
+.orders-table thead tr th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.orders-table thead tr th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 10px solid var(--color-blue-light);
+}
+
+.orders-table tbody td, th {
+  padding: 0px 20px;
+}
+
+.orders-table th {
+  font-weight: 600;
+}
+
+.orders-table tr {
+  cursor: pointer;
+  background-color: var(--color-light);
+  color: #35447d;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.view,
+.update {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px;
+}
+
+.view i,
+.update i {
+  pointer-events: none;
+}
+
+.fa-eye {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.fa-pen-to-square {
+  background-color: var(--color-normal-button);
+  color: var(--color-text-light);
+  padding: 10px;
+  border-radius: 10px;
+}

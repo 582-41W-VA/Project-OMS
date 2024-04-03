@@ -100,6 +100,22 @@ def createOrder(request):
     
     context = {"form": form}
     return render(request, "accounts/order_form.html", context)
+    
+@login_required(login_url='login')
+def searchOrder(request):
+    search_query = request.GET.get("search_query")
+    if search_query:
+        if search_query.isdigit():
+            orders = Order.objects.filter(Q(id=int(search_query)) | Q(title__icontains=search_query))
+        else: 
+            orders = Order.objects.filter(title__icontains=search_query)
+    else:
+        orders = Order.objects.all()
+
+    context = {"orders": orders, "search_query": search_query}
+
+    return render(request, "accounts/dashboard.html", context)
+
 
 @login_required(login_url='login')
 def addComment(request, pk):
