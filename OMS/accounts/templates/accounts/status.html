@@ -4,21 +4,20 @@
     <div class="status-cards">
       <div class="card" id="urgent">
         <div class="text">
-        <h3>Urgent</h3>
-        <p>{{urgent}}</p>
+          <h3>Urgent</h3>
+          <p>{{urgent}}</p>
         </div>
-        
       </div>
       <div class="card" id="regular">
         <div class="text">
-        <h3>Normal</h3>
-        <p>{{regular}}</p>
+          <h3>Normal</h3>
+          <p>{{regular}}</p>
         </div>
       </div>
       <div class="card" id="pending">
         <div class="text">
-        <h3>Pending</h3>
-        <p>{{total_pending}}</p>
+          <h3>Pending</h3>
+          <p>{{total_pending}}</p>
         </div>
       </div>
     </div>
@@ -27,9 +26,16 @@
         <a href="">Profile<i class="fa-solid fa-circle-plus"></i></a>
       </div>
       <div class="add-order">
-        <a href="{% url 'create_order' %}">Order<i class="fa-solid fa-circle-plus"></i></a>
+        {% if request.user.groups.first.name == 'admin' %}
+        <a href="{% url 'create_order' %}"
+          >Order<i class="fa-solid fa-circle-plus"></i
+        ></a>
+        {% endif %} {% if request.user.groups.first.name == 'manager' %}
+        <a href="{% url 'create_order' %}"
+          >Order<i class="fa-solid fa-circle-plus"></i
+        ></a>
+        {% endif %}
       </div>
-
     </div>
   </div>
 </div>
