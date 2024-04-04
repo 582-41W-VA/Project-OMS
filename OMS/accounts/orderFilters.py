@@ -4,7 +4,6 @@ from django.db.models import Q
 from .models import *
 
 class OrderFilter(django_filters.FilterSet):
-    search = django_filters.CharFilter(method='custom_search', label='Search')
     sort_by_date = django_filters.OrderingFilter(
         fields=('date_created',),
         field_labels={'date_created': 'Date Created'}

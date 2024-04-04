@@ -1,11 +1,20 @@
 {% load static %}
-
-<div class="sidebar">
-  <img src="{% static 'images/logo.svg' %}" alt="" width="100px" />
-  <a href="{% url 'home' %}">Dashboard</a>
-  <a href="{% url 'users' %}">Users</a>
-  <a href="#">Reports</a>
-
-  <span>Hello, {{request.user}}</span>
-  <span><a href="{% url 'logout' %}">Logout</a></span>
-</div>
+<aside>
+  <div class="sidebar">
+    <img src="{% static 'images/logo.svg' %}" alt="" class="logo" />
+    <a href="{% url 'home' %}" class="icon-link">
+      <img src="{% static 'images/dashboard-icon.svg' %}" alt="" srcset="" />
+      <p>Dashboard</p>
+    </a>
+    {% if request.user.groups.first.name == 'admin' %}
+    <a href="{% url 'users' %}" class="icon-link">
+      <img src="{% static 'images/users-icon.svg' %}" alt="" srcset="" />
+      <p>Users</p>
+    </a>
+    <a href="#" class="icon-link">
+      <img src="{% static 'images/reports-icon.svg' %}" alt="" srcset="" />
+      <p>Reports</p>
+    </a>
+    {% endif %}
+  </div>
+</aside>

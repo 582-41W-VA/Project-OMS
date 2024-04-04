@@ -1,6 +1,3 @@
-
-Rishi Sisodia
-
 ## TEAM MEMBERS
 
 - Andy Vo
