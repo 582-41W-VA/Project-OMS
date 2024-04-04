@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from datetime import datetime
 from .models import *
 from .forms import OrderForm, CreateUserForm, UpdateUserForm
 from .orderFilters import OrderFilter
@@ -79,8 +80,11 @@ def home(request):
 
 @login_required(login_url='login')
 def viewOrder(request, pk):
-    orders = get_object_or_404(Order, pk=pk)
-    context = {'orders': orders}
+    order = get_object_or_404(Order, pk=pk)
+    comments = Comment.objects.filter(order=order)
+    context = {'order': order,
+                'comments': comments  
+              }
 
     return render(request, "accounts/view_order.html", context)
 
@@ -96,7 +100,55 @@ def createOrder(request):
     
     context = {"form": form}
     return render(request, "accounts/order_form.html", context)
+    
+@login_required(login_url='login')
+def searchOrder(request):
+    search_query = request.GET.get("search_query")
+    if search_query:
+        if search_query.isdigit():
+            orders = Order.objects.filter(Q(id=int(search_query)) | Q(title__icontains=search_query))
+        else: 
+            orders = Order.objects.filter(title__icontains=search_query)
+    else:
+        orders = Order.objects.all()
 
+    context = {"orders": orders, "search_query": search_query}
+
+    return render(request, "accounts/dashboard.html", context)
+
+
+@login_required(login_url='login')
+def addComment(request, pk):
+    current_order = get_object_or_404(Order, pk=pk)
+    current_username = request.user
+    current_date = datetime.now()
+    new_comment = Comment(
+        comment_text = request.POST["comment_text"],
+        order = current_order,
+        user = current_username,
+        date_created = current_date
+    )
+
+    new_comment.save()
+
+    return redirect('view_order', pk=pk)
+
+
+@login_required(login_url='login')
+def deleteComment(request, comment_id):
+    # Fetch the comment
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    # Check if the logged-in user is the creator of the comment
+    if request.user == comment.user:
+        # Delete the comment
+        comment.delete()
+        # Redirect to some page (e.g., the order detail page)
+        return redirect('view_order', pk=comment.order.pk)
+    else:
+        # If the logged-in user is not the creator, return some error or redirect to another page
+        return HttpResponse("You are not authorized to delete this comment.")
+        
 
 @login_required(login_url='login')
 def updateOrder(request, pk):
@@ -170,7 +222,7 @@ def updateUser(request, pk):
     if request.method == 'POST':
         form = UpdateUserForm(request.POST, instance=user)
         if form.is_valid():
-            selected_roles = form.cleaned_data.get('groups')  # Get selected roles
+            selected_roles = form.cleaned_data.get('groups')
             print("Selected roles:", selected_roles)
             form.save()
             return redirect('view_user', pk=pk)
