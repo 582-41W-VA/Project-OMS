@@ -8,6 +8,8 @@
   </div>
   <div class="right-content">
     <span>Hello, {{request.user}}</span>
-    <span><img href="{% url 'logout' %}" src="{% static 'images/log-out.svg' %}" alt="logout" ></span>
+    <span><a href="{% url 'logout' %}">
+      <img src="{% static 'images/log-out.svg' %}" alt="" srcset="">
+    </a></span>
   </div>
 </section>
