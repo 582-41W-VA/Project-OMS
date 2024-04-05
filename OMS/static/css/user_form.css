@@ -1,0 +1,39 @@
+@import url('style.css');
+
+.employees-filter {
+  background-color: var(--color-blue);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-search {
+  display: flex;
+  gap: 20px;
+}
+
+.employee-search h3 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.create-user-form {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-form-flex {
+  display: flex;
+  gap: 20px;
+}
+
+.create-user-form-flex .left {
+  width: 50%;
+}
+
+.create-user-form-flex .right {
+  width: 50%;
+}
