@@ -4,7 +4,7 @@
 The Design Style Guide provides a comprehensive set of guidelines for designing and developing applications of OMS within our company. It covers various aspects of design, including typography, colours, layout, and interactions.
 
 ## Purpose
-The purpose of the style guide is to ensure consistency and cohesion across the OMS projcet. By following these guidelines, designers and developers can create user interfaces that are visually appealing, and user-friendly.
+The purpose of the style guide is to ensure consistency and cohesion across the OMS project. By following these guidelines, designers and developers can create user interfaces that are visually appealing, and user-friendly.
 
 ## Principles
 Our design principles are the foundation of this style guide. They include:
