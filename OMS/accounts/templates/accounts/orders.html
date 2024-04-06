@@ -18,17 +18,19 @@
           value="{{ search_query }}"
         />
         <button type="submit" class="search-button">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <img src="{% static 'images/search-icon.svg' %}" alt="" srcset="">
         </button>
       </form>
     </div>
 
     <form action="" method="GET" class="order-form">
       {{myFilter.form}}
-
+      <div class="filter-btn">
+      <a href="{% url 'home' %}" class="enter-button"
+        ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
       <a href="{% url 'home' %}" class="reset-button"
-        ><i class="fa-solid fa-arrows-rotate"></i
-      ></a>
+        ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
+      </div>
     </form>
   </div>
   <!-- Orders Table -->
