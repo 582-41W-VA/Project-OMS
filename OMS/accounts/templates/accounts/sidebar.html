@@ -8,7 +8,7 @@
     </a>
     {% if request.user.groups.first.name == 'admin' %}
     <a href="{% url 'users' %}" class="icon-link">
-      <img src="{% static 'images/users-icon.svg' %}" alt="" srcset="" />
+      <img src="{% static 'images/users-icon.svg' %}" alt="" srcset="" class="user-icon" />
       <p>Users</p>
     </a>
     <a href="{% url 'reports' %}" class="icon-link">

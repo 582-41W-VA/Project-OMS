@@ -1,6 +1,7 @@
 /* import style css - This is style guide file.*/
 @import url('style.css');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +11,17 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--color-text);
-    background-color: var(--color-blue-light);
+
+    background-color: #e9eef4;
+}
+
+section{
+    padding: 20px 0;
+}
+
+a {
+    text-decoration: none;
+
 }
 
 aside, main, footer {
@@ -65,6 +76,8 @@ main, footer {
 
 .right-content span {
     margin-right: 10px;
+    color: var(--color-blue-dark);
+    text-transform: capitalize;
 }
 
 .fa-house {
@@ -115,6 +128,10 @@ aside {
 
 .icon-link img {
     width: 30px;
+}
+
+.icon-link .user-icon  {
+    width: 40px;
 }
 
 .sidebar a {
@@ -280,7 +297,6 @@ aside {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 
 .order-search {
@@ -289,10 +305,24 @@ aside {
   margin-bottom: 20px
 }
 
+.order-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  gap: 10px;
+}
+
 .order-form {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 50px;
+}
+
+.filter-btn {
+  flex-shrink: 0; 
 }
 
 .search-bar-container {
@@ -317,25 +347,20 @@ aside {
 .search-button{
   border: none;
   cursor: pointer;
-  background-color: var(--color-normal-button);
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
 }
 
-.reset-button{
-  border: none;
-  cursor: pointer;
-  background-color: var(--color-normal-button);
-  border-radius: 5px;
+.filter-btn{
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 5px; 
-  margin-top: 25px;
+  justify-content:center;
+  gap: 10px;
+  cursor: pointer;
+
+
 }
+
+.enter-button img{
+  border-radius: 10px;
 
 .search-button i{
   color: var(--color-light);
@@ -345,6 +370,7 @@ aside {
 .reset-button i{
   color: var(--color-light);
   font-size: 16px;
+
 }
 
 .order-form label {
