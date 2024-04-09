@@ -1,4 +1,10 @@
+<!-- lesmy 
+http://127.0.0.1:8000/update_order/1/
+-->
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
+</head>
 <main>
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %} {{form.as_p}}

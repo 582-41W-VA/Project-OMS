@@ -1,0 +1,143 @@
+/* lesmy 
+use var from the style.css file 
+http://127.0.0.1:8000/update_order/1/
+*/
+@import url('style.css');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--color-text);
+}
+
+h1 {
+    font-family: "DM Serif Display", sans-serif;
+    font-size: 5.5rem;
+}
+
+h2 {
+    font-family: "Sarabun", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: none;
+}
+
+/* Apply responsive design */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 4.2rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 3.8rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Apply form styles */
+main {
+    padding: 40px;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+form input[type="submit"],
+form a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: var(--color-normal-button);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+form input[type="submit"]:hover,
+form a:hover {
+    background-color: var(--color-blue-dark);
+}
+
+form input[type="submit"]:focus,
+form a:focus {
+    outline: none;
+}
+
+form input[type="submit"] {
+    margin-right: 10px;
+}
+
+form input, select{
+    border-radius: 5px;
+}
+
+/* Apply general styles */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid var(--color-border-solid);
+    margin: 1rem 0;
+    padding: 0;
+}
+
