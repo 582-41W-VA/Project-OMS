@@ -6,8 +6,9 @@ from .models import *
 class OrderFilter(django_filters.FilterSet):
     sort_by_date = django_filters.OrderingFilter(
         fields=('date_created',),
-        field_labels={'date_created': 'Date Created'}
+        label='Sort By'
     )
+
 
     class Meta:
         model = Order

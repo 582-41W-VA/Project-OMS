@@ -1,26 +1,15 @@
 {% load static %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/users-status.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<section>
 <div class="status">
   <div class="container">
     <div class="status-cards">
-      <div class="card" id="urgent">
-        <div class="text">
-          <h3>Urgent</h3>
-          <p>{{urgent}}</p>
-        </div>
-      </div>
-      <div class="card" id="regular">
-        <div class="text">
-          <h3>Normal</h3>
-          <p>{{regular}}</p>
-        </div>
-      </div>
-      <div class="card" id="pending">
-        <div class="text">
-          <h3>Pending</h3>
-          <p>{{total_pending}}</p>
-        </div>
-      </div>
+      <img src="{% static 'images/oms-users.png' %}" alt="" srcset="">
     </div>
+    
     <div class="profile-card">
       <div class="add-profile">
         <a href="{% url 'create_user' %}">Users<i class="fa-solid fa-circle-plus"></i></a>
@@ -38,4 +27,6 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
+
