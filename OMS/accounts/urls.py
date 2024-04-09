@@ -11,8 +11,7 @@ urlpatterns = [
     path("create_order/", views.createOrder, name="create_order"),
     path("search/", views.searchOrder, name="search_order"),
     path("<str:pk>/comment", views.addComment, name="add_comment"),
-    #  path("<str:pk>/comment/edit/", views.editComment, name="edit_comment"),
-    # path("<str:pk>/comment/", views.updateComment, name="update_comment"),
+   
     path("delete_comment/<str:comment_id>/", views.deleteComment, name="delete_comment"),
     path("update_order/<str:pk>/", views.updateOrder, name="update_order"),
     path("delete_order/<str:pk>/", views.deleteOrder, name="delete_order"),
@@ -25,5 +24,4 @@ urlpatterns = [
 
     path("reports/", views.reports, name="reports"),    
 
-    #  path("create_order/", views.api, name="api"),
 ]
