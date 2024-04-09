@@ -23,7 +23,6 @@ section{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
   padding: 20px;
   border-radius: 8px;
   width: 40%;

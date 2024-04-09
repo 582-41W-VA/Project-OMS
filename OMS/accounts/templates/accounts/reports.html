@@ -1,0 +1,15 @@
+{% extends 'accounts/main.html' %} {% block content %}
+
+<main>
+  <h3>ORDER REPORT</h3>
+  <p>Total Orders Created: {{orders_created}}</p>
+  <p>Pending Orders: {{orders_pending}}</p>
+  <p>Urgent Orders: {{orders_urgent}}</p>
+  <p>Normal Orders: {{orders_normal}}</p>
+  <p>Attention required: {{orders_attention_required}}</p>
+  <p>Completed: {{orders_completed}}</p>
+
+  <h3>USER REPORT</h3>
+  <p>Total users Created: {{users_created}}</p>
+  {% endblock %}
+</main>

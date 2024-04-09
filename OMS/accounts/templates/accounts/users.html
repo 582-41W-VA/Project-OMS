@@ -1,17 +1,29 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
-
+<head>
+  <link rel="stylesheet" href="{% static 'css/users.css' %}" />
+  <script src="{% static 'js/script.js' %}"></script>
+</head>
 <main>
-  <form action="" method="GET">
+  <section>{% include 'accounts/users-status.html' %}</section>
+  <div class="users">
+  <h3>Employees</h3>
+  <form class="user-search"  action="" method="GET">
     {{myFilter.form}}
-    <button type="submit">Search</button>
-    <a href="{% url 'users' %}">Reset</a>
+    <button type="submit" class="search-button"><img src="{% static 'images/search-icon.svg' %}" alt="" srcset=""></button>
+    <a href="{% url 'users' %}" class="reset-btn"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
   </form>
+  
 
   <!--Add New User-->
-  <a href="{% url 'create_user' %}">Create User</a>
+  <a href="{% url 'create_user' %}" class="add-user"><img src="{% static 'images/add-icon.svg' %}" alt="" srcset=""></i></a>
+   <div class="view-switch">
+  <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon" onclick="toggleView()"> <!-- Grid icon for switching view -->
+  </div>
+  </div>
+ 
 
   {% if users %}
-  <table class="table">
+  <table class="users-table">
     <thead>
       <tr>
         <th scope="col">Username</th>
@@ -27,13 +39,30 @@
         <td>{{i.username}}</td>
         <td>{{i.email}}</td>
         <td>{{i.groups.first.name}}</td>
-        <td><a href="{% url 'view_user' i.pk %}">View</a></td>
-        <td><a href="{% url 'update_user' i.pk %}">Change Role</a></td>
+        <td><a href="{% url 'view_user' i.pk %}" class="view"><i class="fa-solid fa-eye"></i></a></td>
+        <td><a href="{% url 'update_user' i.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
+
+  <!-- New Card View -->
+  <div class="user-cards hidden">
+    {% for user in users %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Name: {{ user.username }}</h5>
+        <p class="card-text">Role: {{ user.groups.first.name }}</p>
+        <p class="card-text">Email: {{ user.email }}</p>
+        <a href="{% url 'view_user' user.pk %}" class="view"><i class="fa-solid fa-eye"></i></a>
+        <a href="{% url 'update_user' user.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
   {% else %}
   <p>No users found.</p>
-  {% endif %} {% endblock content %}
+  {% endif %} 
+{% endblock content %}
+
 </main>

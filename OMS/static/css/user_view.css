@@ -1,0 +1,77 @@
+@import url('style.css');
+
+.user-view {
+    min-height: 50vh;
+    background-color: var(--color-light);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.user-view-flex {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-img-left {
+    width: 50%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.user-profile-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid var(--color-border-solid);
+}
+
+.user-info-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    object-position: center;
+}
+
+.user-info-right h3 {
+    font-size: 1.6rem;
+    color: var(--color-blue);
+}
+
+.user-info-right p {
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.view-btn a {
+    width: 120px;
+    height: 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+.view-save-btn {
+    background-color: var(--color-save);
+}
+
+.view-cancel-btn {
+    background-color: var(--color-delete);
+}

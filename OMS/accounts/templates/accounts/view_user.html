@@ -1,13 +1,42 @@
-{% extends 'accounts/main.html' %} {% block content %}
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/user_form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/user_view.css' %}">
+</head>
 <main>
-  <h3>Username: {{user.username}}</h3>
-
-  <p>Email: {{user.email}}</p>
-
-  <p>Date Joined: {{user.date_joined}}</p>
-  <p>Role: {{user.groups.first.name}}</p>
-
-  <a href="{% url 'update_user' user.pk %}">Change Role</a>
-  <a href="{% url 'delete_user' user.pk %}">Delete</a>
+  <section>{% include 'accounts/status.html' %}</section>
+  <section class="create-user-main">
+    <div class="employees-filter">
+      <div class="employee-search">
+        <h3>Employees</h3>
+        <form action="{% url 'search_order' %}" method="GET" class="search-bar-container">
+          <input type="text" placeholder="Search employee..." class="search-input" name="search_query" id="id_search"
+            value="{{ search_query }}" />
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  
+    <div class="user-view">
+      <div class="user-view-flex">
+        <div class="user-img-left">
+          <img class="user-profile-img" src="{% static 'images/profile-avata.jpg' %}" alt="_blank" srcset="">
+        </div>
+        <div class="user-info-right">
+          <h3>Name: {{user.username}}</h3>
+          <p>Email: {{user.email}}</p>
+          <p>Role: {{user.groups.first.name}}</p>
+          <p>Date Joined: {{user.date_joined}}</p>
+          
+          <div class="view-btn">
+            <a class="view-save-btn" href="{% url 'update_user' user.pk %}">Update</a>
+            <a class="view-cancel-btn" href="{% url 'delete_user' user.pk %}">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 {% endblock %}

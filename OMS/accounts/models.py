@@ -18,7 +18,7 @@ class Order(models.Model):
     priority = models.CharField(max_length=50, choices=PRIORITY)
     status = models.CharField(max_length=50, choices=STATUS, default='Pending')
     date_created = models.DateTimeField(auto_now_add=True, null=True)
-    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_orders')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_by')
     order_assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='assigned_orders', blank=True)
     
     def __str__(self):
