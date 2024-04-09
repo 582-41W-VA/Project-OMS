@@ -1,35 +1,97 @@
-{% extends 'accounts/main.html' %} {% block content %}
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/order_view.css' %}">
+</head>
 <main>
-  <h3>Title: {{order.title}}</h3>
-  <img src="{{order.image.url}}" alt="" width="300px" />
-  <p>Description: {{order.description}}</p>
-  <p>Priority: {{order.priority}}</p>
-  <p>Status: {{order.status}}</p>
-  <p>Date Created: {{order.date_created}}</p>
-  <p>Assigned To: {{order.order_assigned_to}}</p>
+  <section>{% include 'accounts/status.html' %}</section>
+  <section class="orders-main">
+    <div class="orders-filter">
+      <div class="order-search">
+        <h3>Orders</h3>
+        <form 
+          action="{% url 'search_order' %}" 
+          method="GET" 
+          class="search-bar-container"
+        >
+          <input 
+            type="text" 
+            placeholder="Search orders..." 
+            class="search-input" 
+            name="search_query" 
+            id="id_search"
+            value="{{ search_query }}" 
+          />
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+  
+      <form action="" method="GET" class="order-form">
+        {{myFilter.form}}
+  
+        <div class="filter-btn">
+          <a href="{% url 'home' %}" class="enter-button"><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
+          <a href="{% url 'home' %}" class="reset-button"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
+        </div>
+      </form>
+    </div>
 
-  <a href="{% url 'update_order' order.pk %}">Update</a>
-  <a href="{% url 'delete_order' order.pk %}">Delete</a>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th scope="col">Order No</th>
+          <th scope="col">Title</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Status</th>
+          <th scope="col">View</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+    </table>
 
-  <form action="{% url 'add_comment' order.pk %}" method="POST">
-    {% csrf_token %}
-    <fieldset>
-      <legend>Add a comment</legend>
+    <div class="order-view">
+      <div class="order-view-flex">
+        <div class="order-img-left">
+          <img class="order-product-img" src="{{order.image.url}}" alt="order-image" width="300px" />
+        </div>
+        <div class="order-info-right">
+          <h3>Title: {{order.title}}</h3>
+          <p>Description: {{order.description}}</p>
+          <p>Priority: {{order.priority}}</p>
+          <p>Status: {{order.status}}</p>
+          <p>Assigned to: {{order.order_assigned_to}}</p>
+          <p>Date Created: {{order.date_created}}</p>
 
-      <label>
-        Comment
-        <textarea type="textarea" name="comment_text" required></textarea>
-        <button>Submit</button>
-      </label>
-    </fieldset>
-  </form>
+          <div class="order-btn">
+            <a class="order-update-btn" href="{% url 'update_order' order.pk %}">Update</a>
+            <a class="order-delete-btn" href="{% url 'delete_order' order.pk %}">Delete</a>
+          </div>
 
-  {% for comment in comments %}
-  <hr />
-  <h4>{{ comment.user }}</h4>
-  <p>{{ comment.comment_text }}</p>
-  <a href="{% url 'delete_comment' comment.id %}">Delete</a>
-
-  {% endfor %}
+          <form action="{% url 'add_comment' order.pk %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+              <legend>Add a comment</legend>
+              <label>
+                <!-- Comment: -->
+                <textarea type="textarea" name="comment_text" required></textarea>
+                <button class="submit-btn" type="submit">Submit</button>
+              </label>
+            </fieldset>
+          </form>
+        
+          {% for comment in comments %}
+            <hr />
+            <h4>{{ comment.user }}</h4>
+            <p>{{ comment.comment_text }}</p>
+            <a href="{% url 'delete_comment' comment.id %}">Cancel</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 {% endblock %}
