@@ -14,6 +14,7 @@
           <button type="submit" class="search-button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
+          <a href="{% url 'home' %}" class="reset-button"><i class="fa-solid fa-arrows-rotate"></i></a>
         </form>
       </div>
     </div>
@@ -21,27 +22,40 @@
     <div class="create-user-form">
       <div class="create-user-form-flex">
       <!-- <h2>Create New User</h2> -->
-        <div class="left">img</div>
+        <div class="left">
+          <div class="img-container"></div>
+        </div>
           <div class="right">
           <form action="" method="POST">
             {% csrf_token %}
-            <label for="username">Username:</label><br />
+            <label for="username">Username</label><br />
             <input type="text" id="username" name="username" placeholder="{{ form.username.label }}" required /><br />
           
-            <label for="email">Email:</label><br />
+            <label for="email">Email</label><br />
             <input type="email" id="email" name="email" placeholder="{{ form.email.label }}" required /><br />
           
-            <label for="password1">Password:</label><br />
+            <label for="password1">Password</label><br />
             <input type="password" id="password1" name="password1" placeholder="{{ form.password1.label }}" required /><br />
           
-            <label for="password2">Confirm Password:</label><br />
+            <label for="password2">Confirm Password</label><br />
             <input type="password" id="password2" name="password2" placeholder="{{ form.password2.label }}" required /><br />
           
-            <label for="Roles">Select Role:</label><br />
-            {{ form.groups }}
+            <!-- <label for="Roles">Select Role</label><br />
+            {{ form.groups }} -->
+
+            <label for="Roles">Select Role</label><br />
+            <div class="roles">
+              {% for role in form.groups %}
+              <input type="checkbox" id="{{ role.id }}" name="groups" value="{{ role.id }}">
+              <label for="{{ role.id }}">{{ role }}</label><br>
+              {% endfor %}
+            </div>
           
-            <input type="submit" value="Create User" />
-            <a href="{% url 'users' %}">Cancel</a>
+            <div class="buttons-container">
+              <input type="submit" value="Create User" />
+              <a href="{% url 'users' %}">Cancel</a>
+            </div>
+            
           </form>
           </div>
       
