@@ -1,7 +1,7 @@
+import requests
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.db.models import Q
-from django.db.models import F
+from django.db.models import Q, F, Count
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
@@ -91,6 +91,7 @@ def viewOrder(request, pk):
 
 @login_required(login_url='login')
 def createOrder(request):
+    response = requests.get('https://covid-api.com/api/regions').json()
     form = OrderForm()
     if request.method == 'POST':
         form = OrderForm(request.POST, request.FILES)
@@ -98,7 +99,9 @@ def createOrder(request):
             form.save()
             return redirect('/')
     
-    context = {"form": form}
+    context = {"form": form,
+                "response": response
+    }
     return render(request, "accounts/order_form.html", context)
     
 @login_required(login_url='login')
@@ -128,7 +131,6 @@ def addComment(request, pk):
         user = current_username,
         date_created = current_date
     )
-
     new_comment.save()
 
     return redirect('view_order', pk=pk)
@@ -136,17 +138,15 @@ def addComment(request, pk):
 
 @login_required(login_url='login')
 def deleteComment(request, comment_id):
-    # Fetch the comment
     comment = get_object_or_404(Comment, pk=comment_id)
 
-    # Check if the logged-in user is the creator of the comment
+   
     if request.user == comment.user:
-        # Delete the comment
         comment.delete()
-        # Redirect to some page (e.g., the order detail page)
+
         return redirect('view_order', pk=comment.order.pk)
     else:
-        # If the logged-in user is not the creator, return some error or redirect to another page
+
         return HttpResponse("You are not authorized to delete this comment.")
         
 
@@ -245,3 +245,28 @@ def deleteUser(request, pk):
 
     context = {'user': user}
     return render(request, 'accounts/delete_user.html', context)
+
+@login_required(login_url='login')
+def reports(request):
+    orders = Order.objects.all()
+
+    orders_created = orders.count()
+    orders_pending = orders.exclude(status='Complete').count()
+    orders_urgent = orders.filter(priority='Urgent').exclude(status='Complete').count()
+    orders_normal = orders.filter(priority='Normal').exclude(status='Complete').count()
+    orders_attention_required = orders.filter(status='Attention Required').count()
+    orders_completed = orders.filter(status='Complete').count()
+
+    users = User.objects.all()
+    users_created = users.count()
+
+    context = {'orders_created': orders_created,
+                'orders_pending': orders_pending,
+                'orders_urgent': orders_urgent,
+                'orders_normal': orders_normal,
+                'orders_attention_required': orders_attention_required,
+                'orders_completed': orders_completed,
+                'users_created': users_created,
+                }
+
+    return render(request, 'accounts/reports.html', context)
