@@ -22,16 +22,17 @@
         </button>
       </form>
     </div>
-
+    <div class="order-section">
     <form action="" method="GET" class="order-form">
       {{myFilter.form}}
-      <div class="filter-btn">
+    </form>
+    <div class="filter-btn">
       <a href="{% url 'home' %}" class="enter-button"
         ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
       <a href="{% url 'home' %}" class="reset-button"
         ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
       </div>
-    </form>
+    </div>
   </div>
   <!-- Orders Table -->
   {% if orders %}

@@ -1,1 +1,201 @@
 @import url('style.css');
+
+.users{
+    display: flex;
+    flex-direction: row;;
+    gap : 40px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: var(--color-blue);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    gap : 10px;
+}
+
+h3{
+    color: var(--color-text-light);
+}
+
+label{
+    display: none;
+}
+
+input{
+    width: 300px;
+    border-radius: 10px;
+    border:1px solid #ccc;
+    outline: none;
+    padding: 5px;
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.users h3{
+  text-transform: uppercase;
+  font-size: 28px;
+}
+
+.search-button{
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background: none !important;
+}
+
+.search-button:hover{
+  transform: scale(1.1);
+}
+
+.reset-btn{
+  cursor: pointer;
+}
+
+.reset-btn:hover{
+  transform: scale(1.1);
+}
+
+.add-user{
+  border: none;
+  cursor: pointer;
+  margin-left: -30px;
+}
+
+.add-user:hover{
+  transform: scale(1.1);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+}
+
+.users-table thead tr {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  text-align: left;
+}
+
+.users-table thead tr th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.users-table thead tr th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 10px solid var(--color-blue-light);
+}
+
+.users-table tbody td, th {
+  padding: 0px 20px;
+}
+
+.users-table th {
+  font-weight: 600;
+}
+
+.users-table tr {
+  cursor: pointer;
+  background-color: var(--color-light);
+  color: #35447d;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.view,
+.update {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px;
+}
+
+.view i,
+.update i {
+  pointer-events: none;
+}
+
+.fa-eye {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-pen-to-square {
+  background-color: var(--color-normal-button);
+  color: var(--color-text-light);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* For users card style */
+
+.user-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.card {
+  background: var(--color-light);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: calc(33.333% - 20px);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.grid-icon {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.grid-icon:hover {
+  transform: scale(1.1);
+}
+
+.view-switch {
+  margin-left: auto;
+}
+
+.card-title {
+  text-transform: capitalize;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-text p{
+  font-size: 14px;
+  color:var(--color-gray);
+  margin-bottom: 5px;
+  
+}
+
+.card-text:nth-child(2){
+  text-transform: capitalize;
+}
+
+
+

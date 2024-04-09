@@ -9,9 +9,13 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: var(--color-text);
     background-color: #e9eef4;
+}
+
+section{
+    padding: 20px 0;
 }
 
 a {
@@ -70,6 +74,7 @@ main, footer {
 
 .right-content span {
     margin-right: 10px;
+    color: var(--color-blue-dark);
     text-transform: capitalize;
 }
 
@@ -121,6 +126,10 @@ aside {
 
 .icon-link img {
     width: 30px;
+}
+
+.icon-link .user-icon  {
+    width: 40px;
 }
 
 .sidebar a {
@@ -296,11 +305,24 @@ aside {
   margin-bottom: 20px
 }
 
+.order-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  gap: 10px;
+}
+
 .order-form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   width: 100%;
+  min-height: 50px;
+}
+
+.filter-btn {
+  flex-shrink: 0; 
 }
 
 .search-bar-container {
