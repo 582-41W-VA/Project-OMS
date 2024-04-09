@@ -1,6 +1,4 @@
-/* ------------------------- Style-guide CSS ------------------------------------------------------------ */
-
-/* design_guide/css/style.css */
+/* ------------------------- Style-guide / Gerneral CSS ------------------------------------------------------------ */
 
 /* ------------------------- fonts ------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
@@ -46,24 +44,24 @@
 
 h1 {
     font-family: "DM Serif Display", sans-serif;
-    font-size: 5.5rem;
+    font-size: 3.2rem;
 }
 
 h2 {
     font-family: "Sarabun", sans-serif;
-    font-size: 3.4rem;
+    font-size: 2.8rem;
     font-weight: 500;
 }
 
 h3 {
     font-family: "Sarabun", sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 400;
 }
 
 p {
-    font-size: 1.1rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.4rem;
 }
 
 a {
@@ -83,37 +81,39 @@ li {
 /* Responsive design **************************/
 @media screen and (max-width: 768px) {
     h1 {
-        font-size: 4.2rem;
+        font-size: 2.8rem;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     p {
         font-size: 1rem;
-        line-height: 1.6rem;
+        line-height: 1.2rem;
     }
 }
 
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 3.8rem;
-        margin-bottom: 10px;
+        font-size: 2.6rem;
     }
 
     h2 {
-        font-size: 2.4rem;
-        margin-bottom: 25px;
+        font-size: 1.8rem;
     }
 
     h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        line-height: 1rem;
     }
 }
 
