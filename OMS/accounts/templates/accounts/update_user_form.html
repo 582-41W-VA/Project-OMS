@@ -1,20 +1,58 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/update_user_form.css' %}">
+</head>
 <main>
-  <h2>Update User</h2>
-  <form action="" method="POST">
-    {% csrf_token %}
+  <section>{% include 'accounts/status.html' %}</section>
+  <section class="update-user-main">
+    <div class="employees-filter">
+      <div class="employee-search">
+        <h3>Employees</h3>
+        <form action="{% url 'search_order' %}" method="GET" class="search-bar-container">
+          <input type="text" placeholder="Search employee..." class="search-input" name="search_query" id="id_search"
+            value="{{ search_query }}" />
+          <button type="submit" class="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="{% url 'home' %}" class="reset-button"><i class="fa-solid fa-arrows-rotate"></i></a>
+        </form>
+      </div>
+    </div>
 
-    <h3>Username: {{user.username}}</h3>
+    <div class="update-user-form">
+      <div class="update-user-form-flex">
+        <!-- <h2>Update User</h2> -->
+        <div class="left">
+          <!-- <img src="{% static 'images/user.png' %}" alt="user" /> -->
+          <div class="img-container"></div>
+        </div>
+        <div class="right">
+          <form action="" method="POST">
+            {% csrf_token %}
+    
+            <p><span>Name:</span> {{user.username}}</p>
+    
+            <p><span>Email:</span> {{user.email}}</p>
+    
+            <label for="Roles">Select Role:</label><br />
+            {{ form.groups }}
 
-    <p>Email: {{user.email}}</p>
+            <p><span>Date Joined:</span> {{user.date_joined}}</p>
 
-    <p>Date Joined: {{user.date_joined}}</p>
-
-    <label for="Roles">Select Role:</label><br />
-    {{ form.groups }}
-
-    <input type="submit" value="Submit" />
-    <a href="{% url 'users' %}">Cancel</a>
-  </form>
+            <div class="buttons-container">
+              <input type="submit" value="Submit" />
+              <a href="{% url 'users' %}">Cancel</a>
+          </form>
+        </div>
+    
+      </div>
+    </div>
+  
+  </section>
+ 
 </main>
 {% endblock %}
+
+
+
+
