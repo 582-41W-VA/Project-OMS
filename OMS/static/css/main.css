@@ -11,6 +11,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--color-text);
+
     background-color: #e9eef4;
 }
 
@@ -20,6 +21,7 @@ section{
 
 a {
     text-decoration: none;
+
 }
 
 aside, main, footer {
@@ -46,8 +48,8 @@ main, footer {
 }
 
 .topbar h3, .topbar a {
-    font-size: 20px;
-    color: black;
+    font-size: 1.25rem;
+    color: var(--color-text);
     text-decoration: none;
 }
 
@@ -67,7 +69,7 @@ main, footer {
     margin: 0;
 }
 
- .right-content {
+.right-content {
     display: flex;
     align-items: center;
 }
@@ -97,7 +99,7 @@ main, footer {
 /* sidebar styling */
 
 aside {
-    background: linear-gradient(178.24deg, #192d45, #35447d);
+    background: linear-gradient(178.24deg, #192D45, #35447D);
     width: 200px;
     height: 100vh;
     position: fixed;
@@ -224,8 +226,6 @@ aside {
   background-repeat: no-repeat;
 }
 
-
-
 .profile-card {
   display: flex;
   flex-direction: column;
@@ -339,7 +339,7 @@ aside {
   width: 300px;
 }
 
- ::placeholder {
+::placeholder {
   color: var(--color-normal-button);
   opacity: 1;
 }
@@ -356,10 +356,21 @@ aside {
   gap: 10px;
   cursor: pointer;
 
+
 }
 
 .enter-button img{
   border-radius: 10px;
+
+.search-button i{
+  color: var(--color-light);
+  font-size: 16px;
+}
+
+.reset-button i{
+  color: var(--color-light);
+  font-size: 16px;
+
 }
 
 .order-form label {
@@ -384,7 +395,7 @@ aside {
 
 .orders-table thead tr {
   background-color: var(--color-blue);
-  color: #ffffff;
+  color: var(--color-light);
   text-align: left;
 }
 
@@ -416,7 +427,7 @@ aside {
 .orders-table tr {
   cursor: pointer;
   background-color: var(--color-light);
-  color: #35447d;
+  color: var(--color-blue);
   transition: 0.3s;
   margin-bottom: 10px;
 }
