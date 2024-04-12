@@ -3,31 +3,47 @@
 .order-view {
     min-height: 60vh;
     background-color: var(--color-light);
-    padding: 50px;
+    padding: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border-radius: 20px;
 }
 
 .order-view-flex {
     width: 80%;
     display: flex;
-    align-items: center;
-    gap: 50px;
+    gap: 60px;
 }
 
 .order-img-left {
     width: 50%;
-    overflow: hidden;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+    align-items: center;
 }
 
 .order-product-img {
-    width: 220px;
+    width: 300px;
     height: auto;
     object-fit: cover;
     object-position: center;
+    margin-bottom: 40px;
+}
+
+.qr-code {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid var(--color-border-solid);
+    background-color: var(--color-light);
+    padding: 10px;
 }
 
 .order-info-right {
@@ -37,21 +53,38 @@
     gap: 10px;
 }
 
+.order-icon {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 20px;
+}
+
 .order-info-right h3 {
-    font-size: 1.6rem;
-    text-transform: none;
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
     color: var(--color-blue);
 }
 
 .order-info-right p {
     font-size: 1rem;
+    text-transform: capitalize;
     color: var(--color-text);
+    margin: 0px;
+}
+
+.order-info-right span {
+    font-weight: bold;
+    color: var(--color-delete);
 }
 
 .order-btn {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -94,11 +127,77 @@ legend {
 
 .submit-btn {
     border: none;
-    width: 120px;
+    width: 110px;
     height: 40px;
     background-color: var(--color-blue);
     color: var(--color-text-light);
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 30px;
 }
 
+.order-info-right h4 {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.order-comment {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid var(--color-border-solid);
+    border-bottom: 1px solid var(--color-border-solid);
+    padding: 15px 5px;
+    overflow: scroll;
+}
+
+.comment-delete-btn {
+    width: 100px;
+    height: 32px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    padding: 2px 15px;
+    background-color: var(--color-delete);
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.order-info-right .delete-text {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    text-transform: none;
+    margin-top: 10px;
+}
+
+.order-title {  
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#delete-form {
+    margin-top: 30px;
+}
+
+#delete-form .order-delete-btn {
+    width: 120px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    padding: 6px 30px;
+    background-color: var(--color-delete);
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+#delete-form input[type="submit"] {
+    /* width: 120px;
+    height: 40px; */
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1rem;
+    padding: 5px 25px;
+    background-color: var(--color-urgent);
+    color: var(--color-text-light);
+    text-align: center;
+    margin-right: 5px;
+}
