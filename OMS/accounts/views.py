@@ -244,7 +244,10 @@ def updateUser(request, pk):
             form.save()
             return redirect('view_user', pk=pk)
 
-    context = {'form': form, 'page_title': 'Users'}
+    context = {'form': form,
+                'user' : user, 
+               'page_title': 'Users'
+                }
     return render(request, 'accounts/update_user_form.html', context)
 
 
