@@ -82,9 +82,17 @@ def home(request):
 def viewOrder(request, pk):
     order = get_object_or_404(Order, pk=pk)
     comments = Comment.objects.filter(order=order)
-    context = {'order': order,
-                'comments': comments  
-              }
+
+    base_url = request.build_absolute_uri('/').rstrip('/')   
+    path = request.get_full_path() 
+    qr_data = base_url + path  
+    qr_code_url = f'http://api.qrserver.com/v1/create-qr-code/?data={qr_data}&size=100x100'
+
+    context = {
+        'order': order,
+        'comments': comments,
+        'qr_code_url': qr_code_url,
+    }
 
     return render(request, "accounts/view_order.html", context)
 
@@ -140,7 +148,7 @@ def addComment(request, pk):
 def deleteComment(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
 
-   
+
     if request.user == comment.user:
         comment.delete()
 
@@ -170,7 +178,9 @@ def deleteOrder(request, pk):
         order.delete()
         return redirect('/')
 
-    context = {'order': order}
+    context = {
+        'order': order,
+    }
     return render(request, 'accounts/delete_order.html', context)
 
 

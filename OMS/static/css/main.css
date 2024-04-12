@@ -11,7 +11,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: var(--color-text);
-
     background-color: #e9eef4;
 }
 
@@ -88,8 +87,7 @@ main, footer {
 .right-content img {
     transition: all 0.5s ease-in-out;
     margin-right: 10px
-  }
-  
+}
 
 .right-content img:hover {
     transform: rotate(360deg) scale(1.2);
@@ -267,6 +265,7 @@ aside {
 .add-profile a:hover{
   color: #4e4e4e;
 }
+
 .add-order a:hover {
   color: #d8d8d8; 
 }
@@ -355,12 +354,11 @@ aside {
   justify-content:center;
   gap: 10px;
   cursor: pointer;
-
-
 }
 
 .enter-button img{
   border-radius: 10px;
+}
 
 .search-button i{
   color: var(--color-light);

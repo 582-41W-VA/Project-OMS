@@ -7,64 +7,28 @@
 </head>
 <main>
   <section>{% include 'accounts/status.html' %}</section>
-  <section class="orders-main">
-    <div class="orders-filter">
-      <div class="order-search">
-        <h3>Orders</h3>
-        <form 
-          action="{% url 'search_order' %}" 
-          method="GET" 
-          class="search-bar-container"
-        >
-          <input 
-            type="text" 
-            placeholder="Search orders..." 
-            class="search-input" 
-            name="search_query" 
-            id="id_search"
-            value="{{ search_query }}" 
-          />
-          <button type="submit" class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
-      </div>
-  
-      <form action="" method="GET" class="order-form">
-        {{myFilter.form}}
-  
-        <div class="filter-btn">
-          <a href="{% url 'home' %}" class="enter-button"><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
-          <a href="{% url 'home' %}" class="reset-button"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
-        </div>
-      </form>
-    </div>
-
-    <table class="orders-table">
-      <thead>
-        <tr>
-          <th scope="col">Order No</th>
-          <th scope="col">Title</th>
-          <th scope="col">Priority</th>
-          <th scope="col">Status</th>
-          <th scope="col">View</th>
-          <th scope="col">Update</th>
-        </tr>
-      </thead>
-    </table>
 
     <div class="order-view">
       <div class="order-view-flex">
         <div class="order-img-left">
           <img class="order-product-img" src="{{order.image.url}}" alt="order-image" width="300px" />
+
+          <!-- QRCODE -->
+          <img class="qr-code" src="{{ qr_code_url }}" alt="QR Code" />
         </div>
+
         <div class="order-info-right">
-          <h3>Title: {{order.title}}</h3>
-          <p>Description: {{order.description}}</p>
-          <p>Priority: {{order.priority}}</p>
-          <p>Status: {{order.status}}</p>
-          <p>Assigned to: {{order.order_assigned_to}}</p>
-          <p>Date Created: {{order.date_created}}</p>
+          <h3>
+            <img class="order-icon" src="{% static 'images/form-order-icon.svg' %}" alt="_blank" srcset="">
+            Order
+          </h3>
+          <hr>
+          <p><span>Title:</span> {{order.title}}</p>
+          <p><span>Description:</span> {{order.description}}</p>
+          <p><span>Priority:</span> {{order.priority}}</p>
+          <p><span>Status:</span> {{order.status}}</p>
+          <p><span>Assigned to:</span> {{order.order_assigned_to}}</p>
+          <p><span>Date Created:</span> {{order.date_created}}</p>
 
           <div class="order-btn">
             <a class="order-update-btn" href="{% url 'update_order' order.pk %}">Update</a>
@@ -85,9 +49,9 @@
         
           {% for comment in comments %}
             <hr />
-            <h4>{{ comment.user }}</h4>
-            <p>{{ comment.comment_text }}</p>
-            <a href="{% url 'delete_comment' comment.id %}">Cancel</a>
+            <h4><span>User:</span> {{ comment.user }}</h4>
+            <p class="order-comment">{{ comment.comment_text }}</p>
+            <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">Delete</a>
           {% endfor %}
         </div>
       </div>
