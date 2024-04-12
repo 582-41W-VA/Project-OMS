@@ -162,7 +162,7 @@ def addComment(request, pk):
 def deleteComment(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
 
-   
+
     if request.user == comment.user:
         comment.delete()
 
@@ -192,7 +192,9 @@ def deleteOrder(request, pk):
         order.delete()
         return redirect('/')
 
-    context = {'order': order}
+    context = {
+        'order': order,
+    }
     return render(request, 'accounts/delete_order.html', context)
 
 

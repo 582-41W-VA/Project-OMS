@@ -1,11 +1,35 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
-<main>
-  <p>Are you sure you want to delete "{{order.title}}"?</p>
 
-  <form action="{% url 'delete_order' order.id %}" method="POST">
-    {% csrf_token %}
-    <input type="submit" name="Confirmed" value="Yes" />
-    <a href="{% url 'view_order' order.id %}">No</a>
-  </form>
+<head>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/order_view.css' %}">
+</head>
+
+<main>
+  <section>{% include 'accounts/status.html' %}</section>
+
+  <div class="order-view">
+    <div class="order-view-flex">
+      <div class="order-img-left">
+        <img class="order-product-img" src="{{order.image.url}}" alt="order-image" width="300px" />
+      </div>
+
+      <div class="order-info-right">
+        <h3>
+          <img class="order-icon" src="{% static 'images/form-order-icon.svg' %}" alt="_blank" srcset="">
+          Order
+        </h3>
+        <hr>
+        <p class="delete-text">Are you sure you want to delete <br><br><span class="order-title">"{{order.title}}"</span> ?</p>
+        
+        <form id="delete-form" action="{% url 'delete_order' order.id %}" method="POST">
+          {% csrf_token %}
+          <input type="submit" name="Confirmed" value="Yes" />
+          <a class="order-delete-btn" href="{% url 'view_order' order.id %}">No</a>
+        </form>
+      </div>
+    </div>
+  </div>
 </main>
 {% endblock %}
