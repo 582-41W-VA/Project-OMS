@@ -6,16 +6,13 @@
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
   <div class="users">
-  <h3>Employees</h3>
+  <h3>Users</h3>
   <form class="user-search"  action="" method="GET">
     {{myFilter.form}}
     <button type="submit" class="search-button"><img src="{% static 'images/search-icon.svg' %}" alt="" srcset=""></button>
     <a href="{% url 'users' %}" class="reset-btn"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
   </form>
   
-
-  <!--Add New User-->
-  <a href="{% url 'create_user' %}" class="add-user"><img src="{% static 'images/add-icon.svg' %}" alt="" srcset=""></i></a>
    <div class="view-switch">
   <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon" onclick="toggleView()"> <!-- Grid icon for switching view -->
   </div>
@@ -53,6 +50,7 @@
       <div class="card-body">
         <h5 class="card-title">Name: {{ user.username }}</h5>
         <p class="card-text">Role: {{ user.groups.first.name }}</p>
+        <p class="card-text">Date Joined: {{user.date_joined}}</p>
         <p class="card-text">Email: {{ user.email }}</p>
         <a href="{% url 'view_user' user.pk %}" class="view"><i class="fa-solid fa-eye"></i></a>
         <a href="{% url 'update_user' user.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
