@@ -1,9 +1,9 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 
 <head>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
-  <link rel="stylesheet" href="{% static 'css/order_view.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/order_view.css' %}" />
 </head>
 <main>
   <section>{% include 'accounts/status.html' %}</section>
@@ -11,31 +11,35 @@
     <div class="orders-filter">
       <div class="order-search">
         <h3>Orders</h3>
-        <form 
-          action="{% url 'search_order' %}" 
-          method="GET" 
+        <form
+          action="{% url 'search_order' %}"
+          method="GET"
           class="search-bar-container"
         >
-          <input 
-            type="text" 
-            placeholder="Search orders..." 
-            class="search-input" 
-            name="search_query" 
+          <input
+            type="text"
+            placeholder="Search orders..."
+            class="search-input"
+            name="search_query"
             id="id_search"
-            value="{{ search_query }}" 
+            value="{{ search_query }}"
           />
           <button type="submit" class="search-button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
       </div>
-  
+
       <form action="" method="GET" class="order-form">
         {{myFilter.form}}
-  
+
         <div class="filter-btn">
-          <a href="{% url 'home' %}" class="enter-button"><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
-          <a href="{% url 'home' %}" class="reset-button"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
+          <a href="{% url 'home' %}" class="enter-button"
+            ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""
+          /></a>
+          <a href="{% url 'home' %}" class="reset-button"
+            ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""
+          /></a>
         </div>
       </form>
     </div>
@@ -56,8 +60,17 @@
     <div class="order-view">
       <div class="order-view-flex">
         <div class="order-img-left">
-          <img class="order-product-img" src="{{order.image.url}}" alt="order-image" width="300px" />
+          <img
+            class="order-product-img"
+            src="{{order.image.url}}"
+            alt="order-image"
+            width="300px"
+          />
         </div>
+
+        <!-- QRCODE -->
+        <img src="{{ qr_code_url }}" alt="QR Code" />
+
         <div class="order-info-right">
           <h3>Title: {{order.title}}</h3>
           <p>Description: {{order.description}}</p>
@@ -67,8 +80,12 @@
           <p>Date Created: {{order.date_created}}</p>
 
           <div class="order-btn">
-            <a class="order-update-btn" href="{% url 'update_order' order.pk %}">Update</a>
-            <a class="order-delete-btn" href="{% url 'delete_order' order.pk %}">Delete</a>
+            <a class="order-update-btn" href="{% url 'update_order' order.pk %}"
+              >Update</a
+            >
+            <a class="order-delete-btn" href="{% url 'delete_order' order.pk %}"
+              >Delete</a
+            >
           </div>
 
           <form action="{% url 'add_comment' order.pk %}" method="POST">
@@ -77,17 +94,21 @@
               <legend>Add a comment</legend>
               <label>
                 <!-- Comment: -->
-                <textarea type="textarea" name="comment_text" required></textarea>
+                <textarea
+                  type="textarea"
+                  name="comment_text"
+                  required
+                ></textarea>
                 <button class="submit-btn" type="submit">Submit</button>
               </label>
             </fieldset>
           </form>
-        
+
           {% for comment in comments %}
-            <hr />
-            <h4>{{ comment.user }}</h4>
-            <p>{{ comment.comment_text }}</p>
-            <a href="{% url 'delete_comment' comment.id %}">Cancel</a>
+          <hr />
+          <h4>{{ comment.user }}</h4>
+          <p>{{ comment.comment_text }}</p>
+          <a href="{% url 'delete_comment' comment.id %}">Cancel</a>
           {% endfor %}
         </div>
       </div>
