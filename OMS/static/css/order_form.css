@@ -1,143 +1,90 @@
-/* lesmy 
-use var from the style.css file 
-http://127.0.0.1:8000/update_order/1/
-*/
 @import url('style.css');
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    color: var(--color-text);
+.order-form {
+    display: block;
 }
 
-h1 {
-    font-family: "DM Serif Display", sans-serif;
-    font-size: 5.5rem;
+.order-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    /* max-width: 600px; */
+    /* margin: 0 auto; */
+    /* border: 2px solid var(--color-border-solid); */
 }
 
-h2 {
-    font-family: "Sarabun", sans-serif;
-    font-size: 3.4rem;
+.order-header h3 {
+    font-size: 2.5rem;
     font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-blue);
 }
 
-h3 {
-    font-size: 2.2rem;
-    font-weight: 400;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 2rem;
-}
-
-a {
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
-}
-
-a:focus {
-    outline: none;
-}
-
-/* Apply responsive design */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 4.2rem;
-    }
-
-    h2 {
-        font-size: 3rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 3.8rem;
-        margin-bottom: 10px;
-    }
-
-    h2 {
-        font-size: 2.4rem;
-        margin-bottom: 25px;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-    }
-}
-
-/* Apply form styles */
-main {
-    padding: 40px;
-}
-
-form {
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-form input[type="submit"],
-form a {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    text-align: center;
-    background-color: var(--color-normal-button);
-    color: var(--color-text-light);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-form input[type="submit"]:hover,
-form a:hover {
-    background-color: var(--color-blue-dark);
-}
-
-form input[type="submit"]:focus,
-form a:focus {
-    outline: none;
-}
-
-form input[type="submit"] {
+.order-form .order-header img {
+    width: 50px; 
+    height: 50px; 
     margin-right: 10px;
 }
 
-form input, select{
+.order-form form {
+    margin: 0 auto;
+    max-width: 600px;
+    /* border: 2px solid var(--color-border-solid); */
+}
+
+.order-form form label {
+    display: inline-block;
+    width: 150px; 
+    margin-right: 2px; 
+    text-align: left;
+    color: var(--color-text);
+}
+
+.order-form form input[type="text"],
+.order-form form input[type="email"],
+.order-form form textarea {
+    width: calc(100% - 250px); 
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border-solid);
     border-radius: 5px;
+    background-color: var(--color-light);
+    color: var(--color-text);
 }
 
-/* Apply general styles */
+/* ********************* ASK ABOUT THIS */
+/* #id_image {
+    border-radius: 25px;
+    background-color: red;
+} */
 
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+form .buttons-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 10px;
 }
 
-textarea {
-    resize: vertical;
+.order-form form input[type="submit"] {
+    background-color: var(--color-normal);
+    color: var(--color-text-light);
+    width: 122px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+}
+form .buttons-container a {
+    background-color: var(--color-delete);
+    color: var(--color-text-light);
+    width: 122px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
 }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid var(--color-border-solid);
-    margin: 1rem 0;
-    padding: 0;
-}
 
