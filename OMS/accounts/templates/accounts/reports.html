@@ -1,19 +1,17 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 <head>
-  <link rel="stylesheet" href="{% static 'css/reports.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reports.css' %}" />
 </head>
 <main>
   <section>{% include 'accounts/status.html' %}</section>
   <div class="orders">
-    <h3>Orders</h3>
+    <h3>Reports</h3>
   </div>
 
   <div class="grid-container">
-  
     <div class="item-container">
-      <h5>Order Reports</h5>
+      <h5>Order Report</h5>
       <div class="item">
-
         <table>
           <tr>
             <td>Total Orders Created:</td>
@@ -43,9 +41,8 @@
       </div>
     </div>
     <div class="item-container">
-      <h5>User Reports</h5>
+      <h5>User Report</h5>
       <div class="item">
-
         <table>
           <tr>
             <td>Total users Created:</td>
@@ -54,9 +51,6 @@
         </table>
       </div>
     </div>
-  
   </div>
-
-  </main>
-  {% endblock %}
-
+</main>
+{% endblock %}

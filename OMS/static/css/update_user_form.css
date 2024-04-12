@@ -1,4 +1,4 @@
-@import url('style.css');
+@import url("style.css");
 
 body {
   font-family: "Sarabun", sans-serif;
@@ -34,28 +34,6 @@ form:nth-child(2) {
 #id_search {
   display: block;
 }
-
-/* .employees-filter {
-  background-color: var(--color-blue);
-  padding: 25px 0;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.employee-search {
-  display: flex;
-  gap: 20px;
-}
-
-.employee-search h3 {
-  color: var(--color-text-light);
-  text-transform: uppercase;
-  padding-left: 3rem;
-
-  font-size: 2rem;
-  font-weight: 700;
-} */
 
 .search-bar-container {
   border: none !important;

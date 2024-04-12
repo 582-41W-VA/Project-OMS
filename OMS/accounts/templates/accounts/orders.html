@@ -8,32 +8,31 @@
         action="{% url 'search_order' %}"
         method="GET"
         class="search-bar-container"
-       >
+      >
         <label for="id_search">Search OrderNo/Title:</label>
         <div class="search-contain">
-        <input
-          type="text"
-          class="search-input"
-          name="search_query"
-          id="id_search"
-          value="{{ search_query }}"
-          
-        />
-        <button type="submit" class="search-button">
-          <img src="{% static 'images/search-icon.svg' %}" alt="" srcset="">
-        </button>
+          <input
+            type="text"
+            class="search-input"
+            name="search_query"
+            id="id_search"
+            value="{{ search_query }}"
+          />
+          <button type="submit" class="search-button">
+            <img src="{% static 'images/search-icon.svg' %}" alt="" srcset="" />
+          </button>
         </div>
       </form>
     </div>
     <div class="order-section">
-    <form action="" method="GET" class="order-form">
-      {{myFilter.form}}
-    </form>
-    <div class="filter-btn">
-      <a href="{% url 'home' %}" class="enter-button"
-        ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""></a>
-      <a href="{% url 'home' %}" class="reset-button"
-        ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
+      <form action="" method="GET" class="order-form">{{myFilter.form}}</form>
+      <div class="filter-btn">
+        <a href="{% url 'home' %}" class="enter-button"
+          ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""
+        /></a>
+        <a href="{% url 'home' %}" class="reset-button"
+          ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""
+        /></a>
       </div>
     </div>
   </div>

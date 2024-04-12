@@ -13,7 +13,7 @@
     <form action="" method="POST" enctype="multipart/form-data">
       {% csrf_token %} {{form.as_p}}
       <div class="buttons-container">
-        <input type="submit" name="Submit" value="Add Order" />
+        <input type="submit" name="Submit" value="Update" />
         <a href="{% url 'home' %}">Cancel</a>
       </div>
     </form>
