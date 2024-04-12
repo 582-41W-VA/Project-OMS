@@ -116,13 +116,8 @@ def createOrder(request):
             return redirect('/')
     
     context = {"form": form,
-
-                "response": response,
                 "page_title": "Orders"
     }
-=======
-                "response": response
-                }
 
     return render(request, "accounts/order_form.html", context)
 
