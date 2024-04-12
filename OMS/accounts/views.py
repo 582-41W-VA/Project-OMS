@@ -72,7 +72,9 @@ def home(request):
                 'total_pending': total_pending,
                 'urgent': urgent,
                 'regular': regular,
-                'myFilter': myFilter
+                'myFilter': myFilter,
+                'page_title': 'Dashboard'
+
                 }
 
     return render(request, 'accounts/dashboard.html', context)
@@ -83,7 +85,8 @@ def viewOrder(request, pk):
     order = get_object_or_404(Order, pk=pk)
     comments = Comment.objects.filter(order=order)
     context = {'order': order,
-                'comments': comments  
+                'comments': comments,
+                'page_title': 'Orders'  
               }
 
     return render(request, "accounts/view_order.html", context)
@@ -100,10 +103,11 @@ def createOrder(request):
             return redirect('/')
     
     context = {"form": form,
-                "response": response
+                "response": response,
+                "page_title": "Orders"
     }
     return render(request, "accounts/order_form.html", context)
-    
+
 @login_required(login_url='login')
 def searchOrder(request):
     search_query = request.GET.get("search_query")
@@ -115,7 +119,7 @@ def searchOrder(request):
     else:
         orders = Order.objects.all()
 
-    context = {"orders": orders, "search_query": search_query}
+    context = {"orders": orders, "search_query": search_query, "page_title": "Orders"}
 
     return render(request, "accounts/dashboard.html", context)
 
@@ -148,7 +152,7 @@ def deleteComment(request, comment_id):
     else:
 
         return HttpResponse("You are not authorized to delete this comment.")
-        
+
 
 @login_required(login_url='login')
 def updateOrder(request, pk):
@@ -159,7 +163,7 @@ def updateOrder(request, pk):
         if form.is_valid():
             form.save()
             return redirect('/')
-    context = {'form': form}
+    context = {'form': form, 'page_title': 'Orders'}
     return render(request, "accounts/order_form.html", context)
 
 
@@ -185,9 +189,7 @@ def userListPage(request):
     myFilter = UserFilter(request.GET, queryset=users)
     users = myFilter.qs
 
-    context = {'users': users,
-                'myFilter': myFilter
-                }
+    context = {"users": users, "myFilter": myFilter, "page_title": 'Users'}
 
     return render(request, 'accounts/users.html', context)
 
@@ -196,10 +198,10 @@ def userListPage(request):
 def viewUser(request, pk):
     user = get_object_or_404(User, pk=pk)
     groups = user.groups.all()
-    context = {'user': user, 'groups': groups}
+    context = {'user': user, 'groups': groups, 'page_title': 'Users'}
 
     return render(request, 'accounts/view_user.html', context)
-    
+
 
 @login_required(login_url='login')
 def createUser(request):
@@ -210,7 +212,7 @@ def createUser(request):
             form.save()
             return redirect('/users')
     
-    context = {"form": form}
+    context = {"form": form, "page_title": "Users"}
 
     return render(request, 'accounts/user_form.html', context)
 
@@ -227,7 +229,7 @@ def updateUser(request, pk):
             form.save()
             return redirect('view_user', pk=pk)
 
-    context = {'form': form}
+    context = {'form': form, 'page_title': 'Users'}
     return render(request, 'accounts/update_user_form.html', context)
 
 
@@ -243,7 +245,7 @@ def deleteUser(request, pk):
         user.delete()
         return redirect('users')
 
-    context = {'user': user}
+    context = {'user': user, 'page_title': 'Users'}
     return render(request, 'accounts/delete_user.html', context)
 
 @login_required(login_url='login')
@@ -260,13 +262,15 @@ def reports(request):
     users = User.objects.all()
     users_created = users.count()
 
-    context = {'orders_created': orders_created,
-                'orders_pending': orders_pending,
-                'orders_urgent': orders_urgent,
-                'orders_normal': orders_normal,
-                'orders_attention_required': orders_attention_required,
-                'orders_completed': orders_completed,
-                'users_created': users_created,
-                }
+    context = {
+        "orders_created": orders_created,
+        "orders_pending": orders_pending,
+        "orders_urgent": orders_urgent,
+        "orders_normal": orders_normal,
+        "orders_attention_required": orders_attention_required,
+        "orders_completed": orders_completed,
+        "users_created": users_created,
+        "page_title": 'Reports',
+    }
 
     return render(request, 'accounts/reports.html', context)

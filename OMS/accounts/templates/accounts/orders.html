@@ -8,18 +8,21 @@
         action="{% url 'search_order' %}"
         method="GET"
         class="search-bar-container"
-      >
+       >
+        <label for="id_search">Search OrderNo/Title:</label>
+        <div class="search-contain">
         <input
           type="text"
-          placeholder="Search orders..."
           class="search-input"
           name="search_query"
           id="id_search"
           value="{{ search_query }}"
+          
         />
         <button type="submit" class="search-button">
           <img src="{% static 'images/search-icon.svg' %}" alt="" srcset="">
         </button>
+        </div>
       </form>
     </div>
     <div class="order-section">
