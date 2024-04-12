@@ -3,39 +3,30 @@
   <link rel="stylesheet" href="{% static 'css/update_user_form.css' %}">
 </head>
 <main>
-  <section>{% include 'accounts/status.html' %}</section>
+  <section>{% include 'accounts/users-status.html' %}</section>
   <section class="update-user-main">
-    <div class="employees-filter">
-      <div class="employee-search">
-        <h3>Employees</h3>
-        <form action="{% url 'search_order' %}" method="GET" class="search-bar-container">
-          <input type="text" placeholder="Search employee..." class="search-input" name="search_query" id="id_search"
-            value="{{ search_query }}" />
-          <button type="submit" class="search-button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-          <a href="{% url 'home' %}" class="reset-button"><i class="fa-solid fa-arrows-rotate"></i></a>
-        </form>
-      </div>
+
+    <div class="users">
+      <h3>Updating user</h3>
     </div>
 
     <div class="update-user-form">
       <div class="update-user-form-flex">
-        <!-- <h2>Update User</h2> -->
         <div class="left">
-          <!-- <img src="{% static 'images/user.png' %}" alt="user" /> -->
           <div class="img-container"></div>
         </div>
         <div class="right">
           <form action="" method="POST">
             {% csrf_token %}
     
-            <p><span>Name:</span> {{user.username}}</p>
+            <p><span>Name:</span> {{user.username|capfirst}}</p>
     
-            <p><span>Email:</span> {{user.email}}</p>
+            <p><span>Email:</span> {{user.email|capfirst}}</p>
     
-            <label for="Roles">Select Role:</label><br />
-            {{ form.groups }}
+            <div class="roles">
+              <label for="Roles">Role:</label><br />
+              {{ form.groups }}
+            </div>
 
             <p><span>Date Joined:</span> {{user.date_joined}}</p>
 
@@ -44,7 +35,6 @@
               <a href="{% url 'users' %}">Cancel</a>
           </form>
         </div>
-    
       </div>
     </div>
   

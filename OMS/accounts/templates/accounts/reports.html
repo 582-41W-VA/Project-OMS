@@ -1,15 +1,62 @@
-{% extends 'accounts/main.html' %} {% block content %}
-
+{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/reports.css' %}">
+</head>
 <main>
-  <h3>ORDER REPORT</h3>
-  <p>Total Orders Created: {{orders_created}}</p>
-  <p>Pending Orders: {{orders_pending}}</p>
-  <p>Urgent Orders: {{orders_urgent}}</p>
-  <p>Normal Orders: {{orders_normal}}</p>
-  <p>Attention required: {{orders_attention_required}}</p>
-  <p>Completed: {{orders_completed}}</p>
+  <section>{% include 'accounts/status.html' %}</section>
+  <div class="orders">
+    <h3>Orders</h3>
+  </div>
 
-  <h3>USER REPORT</h3>
-  <p>Total users Created: {{users_created}}</p>
+  <div class="grid-container">
+  
+    <div class="item-container">
+      <h5>Order Reports</h5>
+      <div class="item">
+
+        <table>
+          <tr>
+            <td>Total Orders Created:</td>
+            <td>{{orders_created}}</td>
+          </tr>
+          <tr>
+            <td>Pending Orders:</td>
+            <td>{{orders_pending}}</td>
+          </tr>
+          <tr>
+            <td>Urgent Orders:</td>
+            <td>{{orders_urgent}}</td>
+          </tr>
+          <tr>
+            <td>Normal Orders:</td>
+            <td>{{orders_normal}}</td>
+          </tr>
+          <tr>
+            <td>Attention required:</td>
+            <td>{{orders_attention_required}}</td>
+          </tr>
+          <tr>
+            <td>Completed:</td>
+            <td>{{orders_completed}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="item-container">
+      <h5>User Reports</h5>
+      <div class="item">
+
+        <table>
+          <tr>
+            <td>Total users Created:</td>
+            <td>{{users_created}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+
+  </main>
   {% endblock %}
-</main>
+
