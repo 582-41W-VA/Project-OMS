@@ -1,9 +1,24 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
+</head>
 <main>
-  <form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %} {{form.as_p}}
-    <input type="submit" name="Submit" />
-    <a href="{% url 'home' %}">Cancel</a>
-  </form>
+  <div class="order-form">
+    <div class="order-header">
+      <!-- icon here -->
+      <img src="{% static 'images/form-order-icon.svg' %}" alt="" srcset="">
+      <h3>ORDER</h3>
+    </div>
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{form.as_p}}
+      <div class="buttons-container">
+        <input type="submit" name="Submit" value="Submit" />
+        <a href="{% url 'home' %}">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+
 </main>
 {% endblock %}

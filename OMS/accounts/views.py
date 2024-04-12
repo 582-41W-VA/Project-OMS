@@ -23,7 +23,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.groups.add(Group.objects.get(name='worker'))  # Add user to 'worker' group
+            user.groups.add(Group.objects.get(name='worker'))
             messages.success(request, 'Account was created for ' + user.username)
             return redirect('login')
 
@@ -84,17 +84,30 @@ def home(request):
 def viewOrder(request, pk):
     order = get_object_or_404(Order, pk=pk)
     comments = Comment.objects.filter(order=order)
+
     context = {'order': order,
                 'comments': comments,
                 'page_title': 'Orders'  
               }
+
+
+    base_url = request.build_absolute_uri('/').rstrip('/')   
+    path = request.get_full_path() 
+    qr_data = base_url + path  
+    qr_code_url = f'http://api.qrserver.com/v1/create-qr-code/?data={qr_data}&size=100x100'
+
+    context = {
+        'order': order,
+        'comments': comments,
+        'qr_code_url': qr_code_url,
+    }
+
 
     return render(request, "accounts/view_order.html", context)
 
 
 @login_required(login_url='login')
 def createOrder(request):
-    response = requests.get('https://covid-api.com/api/regions').json()
     form = OrderForm()
     if request.method == 'POST':
         form = OrderForm(request.POST, request.FILES)
@@ -103,9 +116,14 @@ def createOrder(request):
             return redirect('/')
     
     context = {"form": form,
+
                 "response": response,
                 "page_title": "Orders"
     }
+=======
+                "response": response
+                }
+
     return render(request, "accounts/order_form.html", context)
 
 @login_required(login_url='login')
