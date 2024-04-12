@@ -1,31 +1,36 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 <head>
-  <link rel="stylesheet" href="{% static 'css/users.css' %}">
-  <link rel="stylesheet" href="{% static 'css/user_form.css' %}">
-  <link rel="stylesheet" href="{% static 'css/user_view.css' %}">
+  <link rel="stylesheet" href="{% static 'css/users.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/user_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/user_view.css' %}" />
 </head>
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
   <section class="create-user-main">
-    <div class="employees-filter">
+    <div class="user-filter">
       <div class="employee-search">
-        <h3>users detaild</h3>
+        <h3>user details</h3>
       </div>
     </div>
 
     <div class="user-view">
       <div class="user-view-flex">
         <div class="user-img-left">
-          <img class="user-profile-img" src="{% static 'images/create-user.png' %}" alt="_blank" srcset="">
+          <img
+            class="user-profile-img"
+            src="{% static 'images/create-user.png' %}"
+            alt="_blank"
+            srcset=""
+          />
         </div>
         <div class="user-info-right">
           <h3>PROFILE</h3>
-          <hr>
+          <hr />
           <p class="user-name"><span>Username:</span> {{user.username}}</p>
           <p><span>Email:</span> {{user.email}}</p>
           <p class="user-role"><span>Role:</span> {{user.groups.first.name}}</p>
           <p><span>Date Joined:</span> {{user.date_joined}}</p>
-          
+
           <div class="view-btn">
             <a class="view-save-btn" href="{% url 'update_user' user.pk %}"
               >Update</a

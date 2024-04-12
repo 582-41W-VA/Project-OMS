@@ -90,7 +90,6 @@ def viewOrder(request, pk):
                 'page_title': 'Orders'  
               }
 
-
     base_url = request.build_absolute_uri('/').rstrip('/')   
     path = request.get_full_path() 
     qr_data = base_url + path  
@@ -115,14 +114,10 @@ def createOrder(request):
             form.save()
             return redirect('/')
     
-    context = {"form": form,
-
-                "response": response,
+    context = {"form": form,    
                 "page_title": "Orders"
     }
-=======
-                "response": response
-                }
+
 
     return render(request, "accounts/order_form.html", context)
 
@@ -182,7 +177,7 @@ def updateOrder(request, pk):
             form.save()
             return redirect('/')
     context = {'form': form, 'page_title': 'Orders'}
-    return render(request, "accounts/order_form.html", context)
+    return render(request, "accounts/update_order_form.html", context)
 
 
 @login_required(login_url='login')
