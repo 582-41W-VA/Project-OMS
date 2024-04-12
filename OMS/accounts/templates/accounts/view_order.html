@@ -1,9 +1,9 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 
 <head>
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
-  <link rel="stylesheet" href="{% static 'css/order_form.css' %}">
-  <link rel="stylesheet" href="{% static 'css/order_view.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/order_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/order_view.css' %}" />
 </head>
 <main>
   <section>{% include 'accounts/status.html' %}</section>
@@ -31,8 +31,12 @@
           <p><span>Date Created:</span> {{order.date_created}}</p>
 
           <div class="order-btn">
-            <a class="order-update-btn" href="{% url 'update_order' order.pk %}">Update</a>
-            <a class="order-delete-btn" href="{% url 'delete_order' order.pk %}">Delete</a>
+            <a class="order-update-btn" href="{% url 'update_order' order.pk %}"
+              >Update</a
+            >
+            <a class="order-delete-btn" href="{% url 'delete_order' order.pk %}"
+              >Delete</a
+            >
           </div>
 
           <form action="{% url 'add_comment' order.pk %}" method="POST">
@@ -41,12 +45,16 @@
               <legend>Add a comment</legend>
               <label>
                 <!-- Comment: -->
-                <textarea type="textarea" name="comment_text" required></textarea>
+                <textarea
+                  type="textarea"
+                  name="comment_text"
+                  required
+                ></textarea>
                 <button class="submit-btn" type="submit">Submit</button>
               </label>
             </fieldset>
           </form>
-        
+
           {% for comment in comments %}
             <hr />
             <h4><span>User:</span> {{ comment.user }}</h4>

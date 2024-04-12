@@ -23,7 +23,7 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.groups.add(Group.objects.get(name='worker'))  # Add user to 'worker' group
+            user.groups.add(Group.objects.get(name='worker'))
             messages.success(request, 'Account was created for ' + user.username)
             return redirect('login')
 
@@ -99,7 +99,6 @@ def viewOrder(request, pk):
 
 @login_required(login_url='login')
 def createOrder(request):
-    response = requests.get('https://covid-api.com/api/regions').json()
     form = OrderForm()
     if request.method == 'POST':
         form = OrderForm(request.POST, request.FILES)
@@ -109,7 +108,7 @@ def createOrder(request):
     
     context = {"form": form,
                 "response": response
-    }
+                }
     return render(request, "accounts/order_form.html", context)
     
 @login_required(login_url='login')

@@ -12,7 +12,7 @@
         <h3>users detaild</h3>
       </div>
     </div>
-  
+
     <div class="user-view">
       <div class="user-view-flex">
         <div class="user-img-left">
@@ -27,8 +27,12 @@
           <p><span>Date Joined:</span> {{user.date_joined}}</p>
           
           <div class="view-btn">
-            <a class="view-save-btn" href="{% url 'update_user' user.pk %}">Update</a>
-            <a class="view-cancel-btn" href="{% url 'delete_user' user.pk %}">Delete</a>
+            <a class="view-save-btn" href="{% url 'update_user' user.pk %}"
+              >Update</a
+            >
+            <a class="view-cancel-btn" href="{% url 'delete_user' user.pk %}"
+              >Delete</a
+            >
           </div>
         </div>
       </div>
