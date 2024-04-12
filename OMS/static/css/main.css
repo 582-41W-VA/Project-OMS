@@ -361,6 +361,7 @@ aside {
 
 .enter-button img{
   border-radius: 10px;
+}
 
 .search-button i{
   color: var(--color-light);
