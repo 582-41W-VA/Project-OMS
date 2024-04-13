@@ -22,20 +22,31 @@
       </div>
     </div>
     <div class="profile-card">
-      <div class="add-profile">
-        <a href="{% url 'create_user' %}">Users<i class="fa-solid fa-circle-plus"></i></a>
-      </div>
+      {% if request.user.groups.first.name == 'admin' %}
       <div class="add-order">
-        {% if request.user.groups.first.name == 'admin' %}
         <a href="{% url 'create_order' %}"
           >Order<i class="fa-solid fa-circle-plus"></i
         ></a>
-        {% endif %} {% if request.user.groups.first.name == 'manager' %}
-        <a href="{% url 'create_order' %}"
-          >Order<i class="fa-solid fa-circle-plus"></i
-        ></a>
-        {% endif %}
       </div>
+      {% endif %} {% if request.user.groups.first.name == 'manager' %}
+      <div class="add-order">
+        <a href="{% url 'create_order' %}"
+          >Order<i class="fa-solid fa-circle-plus"></i
+        ></a>
+      </div>
+      {% endif %} {% if request.user.groups.first.name == 'admin' %}
+      <div class="add-profile">
+        <a href="{% url 'create_user' %}"
+          >Users<i class="fa-solid fa-circle-plus"></i
+        ></a>
+      </div>
+      {% endif %} {% if request.user.groups.first.name == 'manager' %}
+      <div class="add-profile">
+        <a href="{% url 'create_user' %}"
+          >Users<i class="fa-solid fa-circle-plus"></i
+        ></a>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>

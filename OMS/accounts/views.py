@@ -157,8 +157,7 @@ def addComment(request, pk):
 def deleteComment(request, comment_id):
     comment = get_object_or_404(Comment, pk=comment_id)
 
-
-    if request.user == comment.user:
+    if request.user.is_superuser or request.user == comment.user:
         comment.delete()
 
         return redirect('view_order', pk=comment.order.pk)
@@ -244,7 +243,10 @@ def updateUser(request, pk):
             form.save()
             return redirect('view_user', pk=pk)
 
-    context = {'form': form, 'page_title': 'Users'}
+    context = {'form': form,
+                'user' : user, 
+               'page_title': 'Users'
+                }
     return render(request, 'accounts/update_user_form.html', context)
 
 
