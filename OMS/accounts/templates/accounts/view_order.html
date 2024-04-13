@@ -59,7 +59,9 @@
             <hr />
             <h4><span>User:</span> {{ comment.user }}</h4>
             <p class="order-comment">{{ comment.comment_text }}</p>
-            <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">Delete</a>
+            {% if request.user.groups.first.name == 'admin' or request.user == comment.user %}
+              <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">Delete</a>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
