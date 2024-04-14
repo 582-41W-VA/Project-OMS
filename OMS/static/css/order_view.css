@@ -190,8 +190,6 @@ legend {
 }
 
 #delete-form input[type="submit"] {
-    /* width: 120px;
-    height: 40px; */
     border-radius: 30px;
     border: none;
     font-size: 1.1rem;
