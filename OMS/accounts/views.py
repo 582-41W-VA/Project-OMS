@@ -96,11 +96,11 @@ def viewOrder(request, pk):
     qr_code_url = f'http://api.qrserver.com/v1/create-qr-code/?data={qr_data}&size=100x100'
 
     context = {
-        'order': order,
-        'comments': comments,
-        'qr_code_url': qr_code_url,
+        "order": order,
+        "comments": comments,
+        "qr_code_url": qr_code_url,
+        "page_title": "View Order",
     }
-
 
     return render(request, "accounts/view_order.html", context)
 
@@ -118,7 +118,7 @@ def createOrder(request):
     context = {"form": form,"page_title": "Orders"}
 
     context = {"form": form,    
-                "page_title": "Orders"
+                "page_title": "Create Order"
     }
 
 
@@ -180,7 +180,7 @@ def updateOrder(request, pk):
         if form.is_valid():
             form.save()
             return redirect('/')
-    context = {'form': form, 'page_title': 'Orders'}
+    context = {'form': form, 'page_title': 'Update Order'}
     return render(request, "accounts/update_order_form.html", context)
 
 
@@ -191,9 +191,7 @@ def deleteOrder(request, pk):
         order.delete()
         return redirect('/')
 
-    context = {
-        'order': order,
-    }
+    context = {"order": order, "page_title": "Delete Order"}
     return render(request, 'accounts/delete_order.html', context)
 
 
@@ -217,7 +215,7 @@ def userListPage(request):
 def viewUser(request, pk):
     user = get_object_or_404(User, pk=pk)
     groups = user.groups.all()
-    context = {'user': user, 'groups': groups, 'page_title': 'Users'}
+    context = {'user': user, 'groups': groups, 'page_title': 'View User'}
 
     return render(request, 'accounts/view_user.html', context)
 
@@ -231,7 +229,7 @@ def createUser(request):
             form.save()
             return redirect('/users')
     
-    context = {"form": form, "page_title": "Users"}
+    context = {"form": form, "page_title": "Create User"}
 
     return render(request, 'accounts/user_form.html', context)
 
@@ -248,7 +246,7 @@ def updateUser(request, pk):
             form.save()
             return redirect('view_user', pk=pk)
 
-    context = {'form': form, 'page_title': 'Users'}
+    context = {'form': form, 'page_title': 'Update User'}
     return render(request, 'accounts/update_user_form.html', context)
 
 
@@ -264,7 +262,7 @@ def deleteUser(request, pk):
         user.delete()
         return redirect('users')
 
-    context = {'user': user, 'page_title': 'Users'}
+    context = {'user': user, 'page_title': 'Delete User'}
     return render(request, 'accounts/delete_user.html', context)
 
 @login_required(login_url='login')
