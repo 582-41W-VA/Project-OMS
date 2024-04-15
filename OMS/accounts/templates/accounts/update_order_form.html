@@ -1,22 +1,28 @@
+<!-- this is the Update order form -->
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
 <head>
-  <link rel="stylesheet" href="{% static 'css/order_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/update_order_form.css' %}" />
 </head>
 <main>
-  <div class="order-form">
-    <div class="order-header">
-      <!-- icon here -->
-      <img src="{% static 'images/form-order-icon.svg' %}" alt="" srcset="" />
-      <h3>ORDER</h3>
-    </div>
+  <section>{% include 'accounts/users-status.html' %}</section>
 
-    <form action="" method="POST" enctype="multipart/form-data">
-      {% csrf_token %} {{form.as_p}}
-      <div class="buttons-container">
-        <input type="submit" name="Submit" value="Update" />
-        <a href="{% url 'home' %}">Cancel</a>
+  <div class="update-order-container">
+    <div class="update-order-form">
+      <div class="update-order-header">
+        <img src="{% static 'images/form-order-icon.svg' %}" alt="" srcset="" />
+        <h3>ORDER</h3>
       </div>
-    </form>
+      
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{form.as_p}}
+        <div class="buttons-container">
+          <input type="submit" name="Submit" value="Submit" />
+          <a href="{% url 'home' %}">Cancel</a>
+        </div>
+      </form>
+    </div>
   </div>
 </main>
+
+
 {% endblock %}

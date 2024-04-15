@@ -18,21 +18,23 @@
             id="id_search"
             value="{{ search_query }}"
           />
-          <button type="submit" class="search-button">
+          <button type="submit" class="search-button" title="Search">
             <img src="{% static 'images/search-icon.svg' %}" alt="" srcset="" />
           </button>
         </div>
       </form>
     </div>
     <div class="order-section">
-      <form action="" method="GET" class="order-form">{{myFilter.form}}</form>
-      <div class="filter-btn">
-        <a href="{% url 'home' %}" class="enter-button"
-          ><img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""
-        /></a>
-        <a href="{% url 'home' %}" class="reset-button"
+      <form action="" method="GET" class="order-form">{{myFilter.form}}
+        <div class="filter-btn">
+        <button type="submit" class="enter-button" title="Submit filter">
+          <img src="{% static 'images/enter-icon.svg' %}" alt="" srcset=""/>
+        </button>
+        <a href="{% url 'home' %}" class="reset-button" title="Reset filter"
           ><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""
         /></a>
+        </div>
+      </form>
       </div>
     </div>
   </div>
@@ -58,12 +60,12 @@
         <td>{{i.priority}}</td>
         <td>{{i.status}}</td>
         <td>
-          <a href="{% url 'view_order' i.pk %}" class="view"
+          <a href="{% url 'view_order' i.pk %}" class="view" title="View Order"
             ><i class="fa-solid fa-eye"></i
           ></a>
         </td>
         <td>
-          <a href="{% url 'update_order' i.pk %}" class="update"
+          <a href="{% url 'update_order' i.pk %}" class="update" title="Update Order"
             ><i class="fa-regular fa-pen-to-square"></i
           ></a>
         </td>
