@@ -81,3 +81,8 @@ form .buttons-container a {
 .update-order-form form input[type="file"] {
   margin-left: 95px;
 }
+
+label {
+  font-weight: bold;
+  color: var(--color-delete) !important;
+}

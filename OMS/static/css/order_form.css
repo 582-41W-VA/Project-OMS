@@ -77,3 +77,8 @@ form .buttons-container a {
   text-align: center;
   line-height: 40px;
 }
+
+label {
+  font-weight: bold;
+  color: var(--color-delete) !important;
+}
