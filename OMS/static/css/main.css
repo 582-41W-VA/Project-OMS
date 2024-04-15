@@ -242,7 +242,7 @@ aside {
 }
 
 .add-profile {
-  background-color: #0eadc2;
+  background-color: var(--color-blue);
   color: var(--color-text-light);
 }
 
@@ -251,7 +251,7 @@ aside {
 }
 
 .add-order {
-  background-color: var(--color-blue);
+  background-color: #0eadc2;
   color: var(--color-text-light);
 }
 
@@ -323,6 +323,11 @@ aside {
 
 .filter-btn {
   flex-shrink: 0;
+}
+
+
+.filter-btn button {
+  border: none;
 }
 
 .search-contain {
