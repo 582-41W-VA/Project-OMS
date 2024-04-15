@@ -92,6 +92,7 @@
 .user-info-right span {
   font-weight: bold;
   color: var(--color-delete);
+  margin-right: 10px;
 }
 
 .view-btn {
