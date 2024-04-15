@@ -203,8 +203,9 @@ def createOrder(request):
             form.save()
             return redirect('/')
 
-    context = {"form": form,    
-                "page_title": "Create Order"
+    context = {
+        "form": form,    
+        "page_title": "Create Order"
     }
 
     return render(request, "accounts/order_form.html", context)
