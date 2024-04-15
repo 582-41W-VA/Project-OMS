@@ -172,6 +172,10 @@ def viewOrder(request, pk):
         "order": order,
         "comments": comments,
         "qr_code_url": qr_code_url,
+<<<<<<< HEAD
+=======
+        "page_title": "View Order",
+>>>>>>> main
     }
 
     return render(request, "accounts/view_order.html", context)
@@ -200,9 +204,21 @@ def createOrder(request):
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+<<<<<<< HEAD
             return redirect("/")
+=======
+            return redirect('/')
+    
+
+    context = {"form": form,"page_title": "Orders"}
+
+    context = {"form": form,    
+                "page_title": "Create Order"
+    }
+>>>>>>> main
 
     context = {"form": form, "page_title": "Orders"}
+
 
     return render(request, "accounts/order_form.html", context)
 
@@ -332,8 +348,13 @@ def updateOrder(request, pk):
         form = OrderForm(request.POST, request.FILES, instance=order)
         if form.is_valid():
             form.save()
+<<<<<<< HEAD
             return redirect("/")
     context = {"form": form, "page_title": "Orders"}
+=======
+            return redirect('/')
+    context = {'form': form, 'page_title': 'Update Order'}
+>>>>>>> main
     return render(request, "accounts/update_order_form.html", context)
 
 
@@ -359,10 +380,15 @@ def deleteOrder(request, pk):
         order.delete()
         return redirect("/")
 
+<<<<<<< HEAD
     context = {
         "order": order,
     }
     return render(request, "accounts/delete_order.html", context)
+=======
+    context = {"order": order, "page_title": "Delete Order"}
+    return render(request, 'accounts/delete_order.html', context)
+>>>>>>> main
 
 
 ####USERS#####
@@ -411,7 +437,11 @@ def viewUser(request, pk):
     """
     user = get_object_or_404(User, pk=pk)
     groups = user.groups.all()
+<<<<<<< HEAD
     context = {"user": user, "groups": groups, "page_title": "Users"}
+=======
+    context = {'user': user, 'groups': groups, 'page_title': 'View User'}
+>>>>>>> main
 
     return render(request, "accounts/view_user.html", context)
 
@@ -439,9 +469,15 @@ def createUser(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+<<<<<<< HEAD
             return redirect("/users")
 
     context = {"form": form, "page_title": "Users"}
+=======
+            return redirect('/users')
+    
+    context = {"form": form, "page_title": "Create User"}
+>>>>>>> main
 
     return render(request, "accounts/user_form.html", context)
 
@@ -479,9 +515,8 @@ def updateUser(request, pk):
             form.save()
             return redirect("view_user", pk=pk)
 
-    context = {"form": form, "user": user, "page_title": "Users"}
-    return render(request, "accounts/update_user_form.html", context)
-
+    context = {'form': form, 'page_title': 'Update User'}
+    return render(request, 'accounts/update_user_form.html', context)
 
 # DELETE USER
 @login_required(login_url="login")
@@ -515,8 +550,13 @@ def deleteUser(request, pk):
         user.delete()
         return redirect("users")
 
+<<<<<<< HEAD
     context = {"user": user, "page_title": "Users"}
     return render(request, "accounts/delete_user.html", context)
+=======
+    context = {'user': user, 'page_title': 'Delete User'}
+    return render(request, 'accounts/delete_user.html', context)
+>>>>>>> main
 
 
 # REPORTS

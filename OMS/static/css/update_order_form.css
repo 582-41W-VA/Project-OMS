@@ -1,19 +1,19 @@
 @import url("style.css");
 
-/* create order page */
-.add-order-container {
+/* update order page */
+.update-order-container {
   background-color: var(--color-light);
   padding: 60px;
   border-radius: 20px;
 }
 
-.add-order-form {
+.update-order-form {
   display: block;
   margin: 0 auto;
   max-width: 600px;
 }
 
-.add-order-header {
+.update-order-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,20 +21,20 @@
   margin-bottom: 30px;
 }
 
-.add-order-header img {
+.update-order-header img {
   width: 50px;
   height: 50px;
   margin-right: 10px;
 }
 
-.add-order-header h3 {
+.update-order-header h3 {
   font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--color-blue);
 }
 
-.add-order-form form label {
+.update-order-form form label {
   display: inline-block;
   width: 150px;
   margin-right: 2px;
@@ -42,9 +42,9 @@
   color: var(--color-text);
 }
 
-.add-order-form form input[type="text"],
-.add-order-form form input[type="email"],
-.add-order-form form textarea {
+.update-order-form form input[type="text"],
+.update-order-form form input[type="email"],
+.update-order-form form textarea {
   width: calc(100% - 160px);
   padding: 10px;
   margin-bottom: 20px;
@@ -54,14 +54,14 @@
   color: var(--color-text);
 }
 
-.add-order-form .buttons-container {
+.update-order-form .buttons-container {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.add-order-form form input[type="submit"] {
-  background-color: var(--color-normal);
+.update-order-form form input[type="submit"] {
+  background-color: var(--color-save);
   color: var(--color-text-light);
   width: 122px;
   height: 40px;
@@ -76,4 +76,8 @@ form .buttons-container a {
   border-radius: 20px;
   text-align: center;
   line-height: 40px;
+}
+
+.update-order-form form input[type="file"] {
+  margin-left: 95px;
 }

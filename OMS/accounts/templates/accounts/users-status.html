@@ -11,9 +11,6 @@
     </div>
     
     <div class="profile-card">
-      <div class="add-profile">
-        <a href="{% url 'create_user' %}">Users<i class="fa-solid fa-circle-plus"></i></a>
-      </div>
       <div class="add-order">
         {% if request.user.groups.first.name == 'admin' %}
         <a href="{% url 'create_order' %}"
@@ -24,6 +21,9 @@
           >Order<i class="fa-solid fa-circle-plus"></i
         ></a>
         {% endif %}
+      </div>
+      <div class="add-profile">
+        <a href="{% url 'create_user' %}">Users<i class="fa-solid fa-circle-plus"></i></a>
       </div>
     </div>
   </div>
