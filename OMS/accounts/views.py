@@ -85,10 +85,11 @@ def viewOrder(request, pk):
     order = get_object_or_404(Order, pk=pk)
     comments = Comment.objects.filter(order=order)
 
-    context = {'order': order,
-                'comments': comments,
-                'page_title': 'Orders'  
-              }
+    context = {
+        'order': order,
+        'comments': comments,
+        'page_title': 'Orders'
+    }
 
     base_url = request.build_absolute_uri('/').rstrip('/')   
     path = request.get_full_path() 
@@ -113,15 +114,11 @@ def createOrder(request):
         if form.is_valid():
             form.save()
             return redirect('/')
-    
 
-    context = {"form": form,"page_title": "Orders"}
-
-    context = {"form": form,    
-                "page_title": "Create Order"
+    context = {
+        "form": form,    
+        "page_title": "Create Order"
     }
-
-
 
     return render(request, "accounts/order_form.html", context)
 
