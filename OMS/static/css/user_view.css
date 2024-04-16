@@ -3,26 +3,12 @@
 .user-filter {
   background: var(--color-blue);
   padding: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   border-radius: 10px;
 }
 
 .user-filter h3 {
   text-transform: uppercase;
-}
-
-.users-filter {
-    background-color: var(--color-blue);
-    padding: 15px 0;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.users-filter h3 {
-    color: var(--color-text-light);
-    text-transform: uppercase;
-    padding-left: 3rem;
-    font-size: 1.8rem;
 }
 
 .user-view {
@@ -118,4 +104,45 @@
 
 .view-cancel-btn {
   background-color: var(--color-delete);
+}
+
+.user-info-right .delete-user-text {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  text-transform: none;
+  margin-top: 10px;
+}
+
+.delete-user-title {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+#delete-form {
+  margin-top: 30px;
+}
+
+#delete-form .user-delete-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  padding: 5px 30px;
+  background-color: var(--color-delete);
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+#delete-form input[type="submit"] {
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.1rem;
+  padding: 5px 25px;
+  background-color: var(--color-urgent);
+  color: var(--color-text-light);
+  text-align: center;
+  margin-right: 5px;
 }
