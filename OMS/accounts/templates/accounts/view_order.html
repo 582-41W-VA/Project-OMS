@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{% static 'css/order_view.css' %}" />
 </head>
 <main>
-  <section>{% include 'accounts/status.html' %}</section>
+  <section>{% include 'accounts/users-status.html' %}</section>
 
     <div class="order-view">
       <div class="order-view-flex">
@@ -58,10 +58,12 @@
           {% for comment in comments %}
             <hr />
             <h4><span>User:</span> {{ comment.user }}</h4>
-            <p class="order-comment">{{ comment.comment_text }}</p>
-            {% if request.user.groups.first.name == 'admin' or request.user == comment.user %}
-              <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">Delete</a>
-            {% endif %}
+            <div class="comment-text">
+              <p class="order-comment">{{ comment.comment_text }}</p>
+              {% if request.user.groups.first.name == 'admin' or request.user == comment.user %}
+                <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">Delete</a>
+              {% endif %}
+            </div>
           {% endfor %}
         </div>
       </div>

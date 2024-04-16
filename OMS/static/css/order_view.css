@@ -107,7 +107,7 @@
     background-color: var(--color-delete);
 }
 
-fieldset {
+.order-info-right fieldset {
     background-color: var(--color-blue-light);
     padding: 10px 15px;
     border-radius: 10px;
@@ -144,8 +144,8 @@ legend {
 .order-comment {
     width: 100%;
     height: auto;
-    border-top: 1px solid var(--color-border-solid);
-    border-bottom: 1px solid var(--color-border-solid);
+    /* border-top: 1px solid var(--color-border-solid);
+    border-bottom: 1px solid var(--color-border-solid); */
     padding: 15px 5px;
     overflow: scroll;
     text-align: left;
@@ -209,4 +209,12 @@ legend {
     color: var(--color-text-light);
     text-align: center;
     margin-right: 5px;
+}
+
+.comment-text {
+    background-color: var(--color-light);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
+    padding: 15px 10px 25px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
