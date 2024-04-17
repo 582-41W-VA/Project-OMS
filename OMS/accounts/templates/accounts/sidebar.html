@@ -2,17 +2,20 @@
 <aside>
   <div class="sidebar">
     <img src="{% static 'images/logo.svg' %}" alt="" class="logo" />
-    <a href="{% url 'home' %}" class="icon-link">
-      <img src="{% static 'images/dashboard-icon.svg' %}" alt="" srcset="" />
+    <!-- Dashboard link -->
+    <a href="{% url 'home' %}" class="icon-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+      <img src="{% static 'images/dashboard-icon.svg' %}" alt="" />
       <p>Dashboard</p>
     </a>
     {% if request.user.groups.first.name == 'admin' %}
-    <a href="{% url 'users' %}" class="icon-link">
-      <img src="{% static 'images/users-icon.svg' %}" alt="" srcset="" class="user-icon" />
+    <!-- Users link -->
+    <a href="{% url 'users' %}" class="icon-link {% if request.resolver_match.url_name == 'users' %}active{% endif %}">
+      <img src="{% static 'images/users-icon.svg' %}" alt="" class="user-icon" />
       <p>Users</p>
     </a>
-    <a href="{% url 'reports' %}" class="icon-link">
-      <img src="{% static 'images/reports-icon.svg' %}" alt="" srcset="" />
+    <!-- Reports link -->
+    <a href="{% url 'reports' %}" class="icon-link {% if request.resolver_match.url_name == 'reports' %}active{% endif %}">
+      <img src="{% static 'images/reports-icon.svg' %}" alt="" />
       <p>Reports</p>
     </a>
     {% endif %}

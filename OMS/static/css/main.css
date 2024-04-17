@@ -153,10 +153,11 @@ aside {
   transition: all 0.3s ease-in-out;
 }
 
-.sidebar a:hover::after {
+.sidebar a:hover::after, .sidebar a.active::after {
   visibility: visible;
   width: 100%;
 }
+
 
 /* order status section styling */
 
@@ -457,4 +458,12 @@ th {
   color: var(--color-text-light);
   padding: 10px;
   border-radius: 10px;
+}
+
+.priority-urgent {
+    color: var(--color-urgent); 
+}
+
+.priority-normal {
+    color: var(--color-normal);
 }
