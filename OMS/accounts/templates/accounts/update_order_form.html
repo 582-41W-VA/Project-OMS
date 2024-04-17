@@ -25,6 +25,7 @@
             <input type="file" id="id_image" name="image" style="display:none;" onchange="document.getElementById('current-image').src = window.URL.createObjectURL(this.files[0])">
             <button type="button" onclick="document.getElementById('id_image').click()">Change Image</button>
           </div>
+
         </div>
         <div class="column right-column">
           <h1>
@@ -83,5 +84,5 @@
       });
   });
   </script>
-  
+ 
 {% endblock %}
