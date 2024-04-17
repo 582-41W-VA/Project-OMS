@@ -12,7 +12,7 @@
         <img src="{% static 'images/form-order-icon.svg' %}" alt="" srcset="" />
         <h3>ORDER</h3>
       </div>
-      
+
       <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %} {{form.as_p}}
         <div class="buttons-container">
@@ -23,6 +23,5 @@
     </div>
   </div>
 </main>
-
 
 {% endblock %}
