@@ -1,27 +1,88 @@
-<!-- this is the Update order form -->
-{% extends 'accounts/main.html' %} {% load static %} {% block content %}
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
 <head>
-  <link rel="stylesheet" href="{% static 'css/update_order_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/update_order_form.css' %}">
 </head>
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
+  
+  <section class="update-order-container">
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="flex-container">
+        <div class="column left-column">
+          <!-- Display current image -->
+          <div class="image-container">
+            {% if form.instance.image %}
+              <img src="{{ form.instance.image.url }}" alt="Current Image" id="current-image">
+              <p>Click on the image to change it</p>
+            {% else %}
+              <p>No image uploaded</p>
+            {% endif %}
+            <!-- Change image input -->
+            <input type="file" id="id_image" name="image" style="display:none;" onchange="document.getElementById('current-image').src = window.URL.createObjectURL(this.files[0])">
+            <button type="button" onclick="document.getElementById('id_image').click()">Change Image</button>
+          </div>
 
-  <div class="update-order-container">
-    <div class="update-order-form">
-      <div class="update-order-header">
-        <img src="{% static 'images/form-order-icon.svg' %}" alt="" srcset="" />
-        <h3>ORDER</h3>
-      </div>
-
-      <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %} {{form.as_p}}
-        <div class="buttons-container">
-          <input type="submit" name="Submit" value="Submit" />
-          <a href="{% url 'home' %}">Cancel</a>
         </div>
-      </form>
-    </div>
-  </div>
+        <div class="column right-column">
+          <h1>
+            <img class="order-icon" src="{% static 'images/form-order-icon.svg' %}" alt="Order Icon">
+            Update Order
+          </h1>
+          <!-- Display other form fields -->
+          <div class="form-group">
+            <label for="id_title">Title:</label>
+            {{ form.title }}
+          </div>
+          <div class="form-group">
+            <label for="id_description">Description:</label>
+            {{ form.description }}
+          </div>
+          <div class="form-group">
+            <label for="id_priority">Priority:</label>
+            {{ form.priority }}
+          </div>
+          <div class="form-group">
+            <label for="id_status">Status:</label>
+            {{ form.status }}
+          </div>
+          <div class="form-group">
+            <label for="id_order_assigned_to">Assigned To:</label>
+            {{ form.order_assigned_to }}
+          </div>
+          
+          <!-- Buttons -->
+          <div class="buttons-container">
+            <input type="submit" value="Update">
+            <a href="{% url 'home' %}">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
 </main>
 
+
+<!-- dynamically change image -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var imageInput = document.getElementById('id_image');
+      var currentImage = document.getElementById('current-image');
+  
+      currentImage.addEventListener('click', function() {
+          imageInput.click();
+      });
+  
+      imageInput.addEventListener('change', function(event) {
+          if (event.target.files.length > 0) {
+              var src = URL.createObjectURL(event.target.files[0]);
+              currentImage.src = src;
+          }
+      });
+  });
+  </script>
+ 
 {% endblock %}
