@@ -27,7 +27,8 @@
   margin-right: 10px;
 }
 
-.add-order-header h3 {
+.add-order-header h1 {
+  font-family: "Sarabun", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -39,15 +40,16 @@
   width: 150px;
   margin-right: 2px;
   text-align: left;
-  color: var(--color-text);
+  font-weight: bold;
+  color: var(--color-delete);
 }
 
 .add-order-form form input[type="text"],
 .add-order-form form input[type="email"],
-.add-order-form form textarea {
+.add-order-form form textarea,
+.add-order-form form select {
   width: calc(100% - 160px);
   padding: 10px;
-  margin-bottom: 20px;
   border: 1px solid var(--color-border-solid);
   border-radius: 5px;
   background-color: var(--color-light);
@@ -77,3 +79,4 @@ form .buttons-container a {
   text-align: center;
   line-height: 40px;
 }
+

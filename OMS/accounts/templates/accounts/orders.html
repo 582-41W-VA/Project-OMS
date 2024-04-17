@@ -54,23 +54,23 @@
     </thead>
     <tbody>
       {% for i in orders %}
-      <tr>
-        <th scope="row">{{i.id}}</th>
-        <td>{{i.title}}</td>
-        <td>{{i.priority}}</td>
-        <td>{{i.status}}</td>
-        <td>
-          <a href="{% url 'view_order' i.pk %}" class="view" title="View Order"
-            ><i class="fa-solid fa-eye"></i
-          ></a>
-        </td>
-        <td>
-          <a href="{% url 'update_order' i.pk %}" class="update" title="Update Order"
-            ><i class="fa-regular fa-pen-to-square"></i
-          ></a>
-        </td>
-      </tr>
-      {% endfor %}
+  <tr>
+    <th scope="row">{{i.id}}</th>
+    <td>{{i.title}}</td>
+    <td class="{% if i.priority == 'Urgent' %}priority-urgent{% elif i.priority == 'Normal' %}priority-normal{% endif %}">{{i.priority}}</td>
+    <td>{{i.status}}</td>
+    <td>
+      <a href="{% url 'view_order' i.pk %}" class="view" title="View Order">
+        <i class="fa-solid fa-eye"></i>
+      </a>
+    </td>
+    <td>
+      <a href="{% url 'update_order' i.pk %}" class="update" title="Update Order">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </a>
+    </td>
+</tr>
+{% endfor %}
     </tbody>
   </table>
   {% else %}
