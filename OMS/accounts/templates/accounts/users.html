@@ -13,9 +13,11 @@
     <a href="{% url 'users' %}" class="reset-btn"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
   </form>
   
-   <div class="view-switch">
-  <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon" onclick="toggleView()"> <!-- Grid icon for switching view -->
-  </div>
+  <div class="view-switch">
+  <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon icon" onclick="toggleView()" style="display: inline;"> <!-- Grid icon for switching to card view -->
+  <img src="{% static 'images/list-icon.svg' %}" class="list-icon icon" onclick="toggleView()" style="display: none;"> <!-- List icon for switching to list view -->
+</div>
+
   </div>
  
 
