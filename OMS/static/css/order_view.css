@@ -4,11 +4,31 @@
     min-height: 60vh;
     background-color: var(--color-light);
     padding: 60px;
+    border-radius: 20px;
+}
+
+.return-dashbord {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.return-dashbord img {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.return-dashbord img:hover {
+    transform: translateX(-5px) scale(1.1);
+    cursor: pointer;
+}
+
+.order-view-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border-radius: 20px;
 }
 
 .order-view-flex {
@@ -111,6 +131,7 @@
     background-color: var(--color-blue-light);
     padding: 10px 15px;
     border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 label {
@@ -128,9 +149,9 @@ legend {
 
 .submit-btn {
     border: none;
-    width: 110px;
-    height: 40px;
-    background-color: var(--color-orders);
+    width: 100px;
+    height: 35px;
+    background-color: var(--color-blue);
     color: var(--color-text-light);
     padding: 5px 10px;
     border-radius: 30px;
@@ -141,35 +162,39 @@ legend {
     text-transform: capitalize;
 }
 
-.order-comment {
-    width: 100%;
-    height: auto;
-    /* border-top: 1px solid var(--color-border-solid);
-    border-bottom: 1px solid var(--color-border-solid); */
-    padding: 15px 5px;
-    overflow: scroll;
-    text-align: left;
-}
-
-.order-comment p {
-    margin-bottom: 20px;
-}
-
-.comment-delete-btn {
-    width: 100px;
-    height: 32px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    padding: 2px 15px;
+.comment-text {
     background-color: var(--color-light);
-    color: var(--color-delete);
-    border: 1px solid var(--color-delete);
-    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px 0;
 }
 
-.comment-delete-btn:hover {
-    background-color: var(--color-delete);
-    color: var(--color-text-light);
+.order-comment {
+    height: auto;
+    overflow: scroll;
+    font-size: 1.1rem;
+}
+
+.comment-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-text span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-delete);
+    margin-right: 10px;
+}
+
+.comment-flex .comment-delete-btn img{
+    width: 30px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .order-info-right .delete-text {
@@ -209,12 +234,4 @@ legend {
     color: var(--color-text-light);
     text-align: center;
     margin-right: 5px;
-}
-
-.comment-text {
-    background-color: var(--color-light);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
-    padding: 15px 10px 25px;
-    border-radius: 10px;
-    margin-bottom: 10px;
 }

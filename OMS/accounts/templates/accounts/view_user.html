@@ -12,26 +12,37 @@
     </div>
 
     <div class="user-view">
-      <div class="user-view-flex">
-        <div class="user-img-left">
-          <img
-            class="user-profile-img"
-            src="{% static 'images/create-user.png' %}"
-            alt="_blank"
+      <div class="return-users">
+        <a href="{% url 'users' %}">
+          <img 
+            src="{% static 'images/return-icon.svg' %}" 
+            alt="_blank" 
             srcset=""
           />
-        </div>
-        <div class="user-info-right">
-          <h3>PROFILE</h3>
-          <hr />
-          <p class="user-name"><span>Username:</span> {{user.username}}</p>
-          <p><span>Email:</span> {{user.email}}</p>
-          <p class="user-role"><span>Role:</span> {{user.groups.first.name}}</p>
-          <p><span>Date Joined:</span> {{user.date_joined}}</p>
+        </a>
+      </div>
+      <div class="user-profile-container">
+        <div class="user-view-flex">
+          <div class="user-img-left">
+            <img
+              class="user-profile-img"
+              src="{% static 'images/create-user.png' %}"
+              alt="_blank"
+              srcset=""
+            />
+          </div>
+          <div class="user-info-right">
+            <h3>PROFILE</h3>
+            <hr />
+            <p class="user-name"><span>Username:</span> {{user.username}}</p>
+            <p><span>Email:</span> {{user.email}}</p>
+            <p class="user-role"><span>Role:</span> {{user.groups.first.name}}</p>
+            <p><span>Date Joined:</span> {{user.date_joined}}</p>
 
-          <div class="view-btn">
-            <a class="view-save-btn" href="{% url 'update_user' user.pk %}">Update</a>
-            <a class="view-cancel-btn" href="{% url 'delete_user' user.pk %}">Delete</a>
+            <div class="view-btn">
+              <a class="view-save-btn" href="{% url 'update_user' user.pk %}">Update</a>
+              <a class="view-cancel-btn" href="{% url 'delete_user' user.pk %}">Delete</a>
+            </div>
           </div>
         </div>
       </div>

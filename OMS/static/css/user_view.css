@@ -15,15 +15,34 @@
   min-height: 50vh;
   background-color: var(--color-light);
   padding: 40px;
+  border-radius: 15px;
+}
+
+.return-users {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.return-users img {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.return-users img:hover {
+  transform: translateX(-5px) scale(1.1);
+  cursor: pointer;
+}
+
+.user-view-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border-radius: 15px;
 }
 
 .user-view-flex {
-  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
