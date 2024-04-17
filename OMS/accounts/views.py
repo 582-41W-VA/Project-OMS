@@ -483,7 +483,7 @@ def updateUser(request, pk):
             form.save()
             return redirect("view_user", pk=pk)
 
-    context = {'form': form, 'page_title': 'Update User'}
+    context = {'form': form, 'page_title': 'Update User', 'user' : user}
     return render(request, 'accounts/update_user_form.html', context)
 
 # DELETE USER
