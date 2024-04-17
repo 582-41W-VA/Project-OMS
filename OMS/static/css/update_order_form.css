@@ -1,0 +1,144 @@
+@import url("style.css");
+
+/* update order page */
+.update-order-container {
+  min-height: 60vh;
+  background-color: var(--color-light);
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.left-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.image-container p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-delete);
+}
+
+/* hide the change image button */
+.image-container button {
+  display: none;
+}
+
+/* Hide the label and input */
+.update-order-form label[for="id_image"],
+.update-order-form input[type="file"][name="image"]{
+  display: none;
+}
+
+/* Hide the image link */
+.current-image-container a[href^="/media/"] {
+  display: none;
+}
+
+
+.right-column h1 {
+  font-family: "Sarabun", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-blue);
+}
+
+.order-icon {
+  width: 50px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 20px;
+}
+
+form{
+  width: 80%;
+}
+
+.right-column .form-group label{
+  display: inline-block;
+  width: 150px;
+  margin-right: 2px;
+  text-align: left;
+  font-weight: bold;
+  color: var(--color-delete);
+}
+
+
+.right-column .form-group input[type="text"],
+.right-column .form-group input[type="email"],
+.right-column .form-group textarea,
+.right-column .form-group select {
+  width: calc(100% - 160px);
+  padding: 10px;
+  border: 1px solid var(--color-border-solid);
+  border-radius: 5px;
+  background-color: var(--color-light);
+  color: var(--color-text);
+} 
+
+/* buttons */
+.right-column .buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.right-column .buttons-container input[type="submit"] {
+  background-color: var(--color-save);
+  color: var(--color-text-light);
+  width: 122px;
+  height: 40px;
+  border-radius: 20px;
+  border: 2px solid var(--color-border-solid);
+}
+
+.right-column .buttons-container a {
+  background-color: var(--color-delete);
+  color: var(--color-text-light);
+  width: 122px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 40px;
+}
+

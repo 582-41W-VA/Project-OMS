@@ -1,11 +1,32 @@
 {% extends 'accounts/main.html' %} {% load static %} {% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/users.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/user_form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/user_view.css' %}" />
+</head>
 <main>
-  <p>Are you sure you want to delete "{{user.username}}"?</p>
+  <section>{% include 'accounts/users-status.html' %}</section>
+  <section class="create-user-main">
+    <div class="user-filter">
+      <h3>user details</h3>
+    </div>
 
-  <form action="{% url 'delete_user' user.id %}" method="POST">
-    {% csrf_token %}
-    <input type="submit" name="Confirmed" value="Yes" />
-    <a href="{% url 'view_user' user.id %}">No</a>
-  </form>
+    <div class="user-view">
+      <div class="user-view-flex">
+        <div class="user-img-left">
+          <img class="user-profile-img" src="{% static 'images/create-user.png' %}" alt="_blank" srcset="" />
+        </div>
+        <div class="user-info-right">
+          <h3>PROFILE</h3>
+          <hr />
+          <p class="delete-user-text">Are you sure you want to delete <br><br><span class="delete-user-title">"{{user.username}}"</span> ?</p>
+          <form id="delete-form" action="{% url 'delete_user' user.id %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="Confirmed" value="Yes" />
+            <a class="user-delete-btn" href="{% url 'view_user' user.id %}">No</a>
+          </form>
+        </div>
+      </div>
+    </div>
 </main>
 {% endblock %}

@@ -1,65 +1,68 @@
 @import url("style.css");
 
-.order-form {
-  display: block;
+/* create order page */
+.add-order-container {
+  background-color: var(--color-light);
+  padding: 60px;
+  border-radius: 20px;
 }
 
-.order-header {
+.add-order-form {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.add-order-header {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   margin-bottom: 30px;
-  padding-top: 30px;
 }
 
-.order-header h3 {
+.add-order-header img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.add-order-header h1 {
+  font-family: "Sarabun", sans-serif;
   font-size: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
   color: var(--color-blue);
 }
 
-.order-form .order-header img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.order-form form {
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.order-form form label {
+.add-order-form form label {
   display: inline-block;
   width: 150px;
   margin-right: 2px;
   text-align: left;
-  color: var(--color-text);
+  font-weight: bold;
+  color: var(--color-delete);
 }
 
-.order-form form input[type="text"],
-.order-form form input[type="email"],
-.order-form form textarea {
-  width: calc(100% - 250px);
+.add-order-form form input[type="text"],
+.add-order-form form input[type="email"],
+.add-order-form form textarea,
+.add-order-form form select {
+  width: calc(100% - 160px);
   padding: 10px;
-  margin-bottom: 20px;
   border: 1px solid var(--color-border-solid);
   border-radius: 5px;
   background-color: var(--color-light);
   color: var(--color-text);
 }
 
-form .buttons-container {
+.add-order-form .buttons-container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
   gap: 10px;
 }
 
-.order-form form input[type="submit"] {
+.add-order-form form input[type="submit"] {
   background-color: var(--color-normal);
   color: var(--color-text-light);
   width: 122px;
@@ -76,3 +79,4 @@ form .buttons-container a {
   text-align: center;
   line-height: 40px;
 }
+
