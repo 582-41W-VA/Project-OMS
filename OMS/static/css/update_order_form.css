@@ -116,14 +116,16 @@ form{
   color: var(--color-text);
 } 
 
-/* buttons */
-.right-column .buttons-container {
+/* buttons*/
+.right-column .buttons-container,
+.right-column .worker-buttons-container {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.right-column .buttons-container input[type="submit"] {
+.right-column .buttons-container input[type="submit"],
+.right-column .worker-buttons-container input[type="submit"] {
   background-color: var(--color-save);
   color: var(--color-text-light);
   width: 122px;
@@ -132,7 +134,8 @@ form{
   border: 2px solid var(--color-border-solid);
 }
 
-.right-column .buttons-container a {
+.right-column .buttons-container a,
+.right-column .worker-buttons-container a {
   background-color: var(--color-delete);
   color: var(--color-text-light);
   width: 122px;
@@ -142,3 +145,6 @@ form{
   line-height: 40px;
 }
 
+.right-column .worker-buttons-container {
+  margin-top: 20px;
+}
