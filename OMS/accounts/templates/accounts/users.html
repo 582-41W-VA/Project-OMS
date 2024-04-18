@@ -9,13 +9,13 @@
   <h3>Users</h3>
   <form class="user-search"  action="" method="GET">
     {{myFilter.form}}
-    <button type="submit" class="search-button"><img src="{% static 'images/search-icon.svg' %}" alt="" srcset=""></button>
-    <a href="{% url 'users' %}" class="reset-btn"><img src="{% static 'images/reset-icon.svg' %}" alt="" srcset=""></a>
+    <button type="submit" class="search-button"><img src="{% static 'images/search-icon.svg' %}" alt="" title="Search" srcset=""></button>
+    <a href="{% url 'users' %}" class="reset-btn"><img src="{% static 'images/reset-icon.svg' %}" alt="" title="Reset" srcset=""></a>
   </form>
   
   <div class="view-switch">
-  <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon icon" onclick="toggleView()" style="display: inline;"> <!-- Grid icon for switching to card view -->
-  <img src="{% static 'images/list-icon.svg' %}" class="list-icon icon" onclick="toggleView()" style="display: none;"> <!-- List icon for switching to list view -->
+  <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon icon" onclick="toggleView()" style="display: inline;" title="Grid view"> <!-- Grid icon for switching to card view -->
+  <img src="{% static 'images/list-icon.svg' %}" class="list-icon icon" onclick="toggleView()" style="display: none;" title="List view"> <!-- List icon for switching to list view -->
 </div>
 
   </div>
@@ -38,8 +38,8 @@
         <td>{{i.username}}</td>
         <td>{{i.email}}</td>
         <td>{{i.groups.first.name}}</td>
-        <td><a href="{% url 'view_user' i.pk %}" class="view"><i class="fa-solid fa-eye"></i></a></td>
-        <td><a href="{% url 'update_user' i.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a></td>
+        <td><a href="{% url 'view_user' i.pk %}" class="view" title="View User"><i class="fa-solid fa-eye"></i></a></td>
+        <td><a href="{% url 'update_user' i.pk %}" class="update" title="Update User"><i class="fa-regular fa-pen-to-square"></i></a></td>
       </tr>
       {% endfor %}
     </tbody>
