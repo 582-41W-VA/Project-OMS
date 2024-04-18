@@ -509,7 +509,6 @@ def deleteUser(request, pk):
     user = get_object_or_404(User, pk=pk)
 
     if user.is_superuser:
-        messages.error(request, "Cannot delete superuser.")
         return redirect("users")
 
     if request.method == "POST":
