@@ -52,37 +52,6 @@
                 >Delete</a
               >
             </div>
-
-            <form action="{% url 'add_comment' order.pk %}" method="POST">
-              {% csrf_token %}
-              <fieldset>
-                <legend>Add a comment</legend>
-                <label>
-                  <!-- Comment: -->
-                  <textarea
-                    type="textarea"
-                    name="comment_text"
-                    required
-                  ></textarea>
-                  <button class="submit-btn" type="submit">Submit</button>
-                </label>
-              </fieldset>
-            </form>
-
-            {% for comment in comments %}
-            <div class="comment-text">
-              <p class="order-comment">{{ comment.comment_text }}</p>
-              <hr>
-              <div class="comment-flex">
-                <p><span>{{ comment.user }}</span></p>
-                {% if request.user.groups.first.name == 'admin' or request.user == comment.user %}
-                  <a class="comment-delete-btn" href="{% url 'delete_comment' comment.id %}">
-                    <img src="{% static 'images/delete-icon.svg' %}" alt="_blank" srcset="" />
-                  </a>
-                {% endif %}
-              </div>
-            </div>
-            {% endfor %}
           </div>
         </div>
       </div>
