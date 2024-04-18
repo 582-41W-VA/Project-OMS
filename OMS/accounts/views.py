@@ -334,7 +334,7 @@ def updateOrder(request, pk):
         if form.is_valid():
             form.save()
             return redirect("/")
-    context = {"form": form, "page_title": "Update Order"}
+    context = {"form": form, "order": order, "page_title": "Update Order"}
 
     return render(request, "accounts/update_order_form.html", context)
 
@@ -480,8 +480,9 @@ def updateUser(request, pk):
             form.save()
             return redirect("view_user", pk=pk)
 
-    context = {'form': form, 'page_title': 'Update User', 'user' : user}
-    return render(request, 'accounts/update_user_form.html', context)
+    context = {"form": form, "page_title": "Update User", "user": user}
+    return render(request, "accounts/update_user_form.html", context)
+
 
 # DELETE USER
 @login_required(login_url="login")
