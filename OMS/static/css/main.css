@@ -506,7 +506,7 @@ th {
 
 .order-cards .card-image img {
   width: 100%;
-  height: 120px;
+  height: auto;
   object-fit: cover;
   object-position: center;
   border-radius: 5px;
