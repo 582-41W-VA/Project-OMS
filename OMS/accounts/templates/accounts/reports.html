@@ -4,12 +4,12 @@
 </head>
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
-  <div class="orders">
+  <header class="orders">
     <h3>Reports</h3>
-  </div>
+  </header>
 
   <div class="grid-container">
-    <div class="item-container">
+    <article class="item-container">
       <h5>Order Report</h5>
       <div class="item">
         <table>
@@ -39,8 +39,8 @@
           </tr>
         </table>
       </div>
-    </div>
-    <div class="item-container">
+    </article>
+    <article class="item-container">
       <h5>User Report</h5>
       <div class="item">
         <table>
@@ -50,7 +50,7 @@
           </tr>
         </table>
       </div>
-    </div>
+    </article>
   </div>
 </main>
 {% endblock %}

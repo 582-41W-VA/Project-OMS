@@ -6,16 +6,16 @@
   <section>{% include 'accounts/users-status.html' %}</section>
   <section class="update-user-main">
 
-    <div class="users">
-      <h3>Update User</h3>
-    </div>
+    <header class="users">
+      <h1>Update User</h1>
+    </header>
 
-    <div class="update-user-form">
+    <section class="update-user-form">
       <div class="update-user-form-flex">
-        <div class="left">
+        <article class="left">
           <div class="img-container"></div>
-        </div>
-        <div class="right">
+        </article>
+        <article class="right">
           <form action="" method="POST">
             {% csrf_token %}
     
@@ -34,9 +34,9 @@
               <input type="submit" value="Submit" />
               <a href="{% url 'users' %}">Cancel</a>
           </form>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
   
   </section>
  

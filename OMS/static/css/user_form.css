@@ -24,7 +24,7 @@ form:nth-child(2) {
   gap: 10px;
 }
 
-.users h3 {
+.users h1 {
   text-transform: uppercase;
   font-size: 28px;
   color: var(--color-text-light);
