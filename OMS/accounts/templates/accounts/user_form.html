@@ -5,16 +5,16 @@
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
   <section class="create-user-main">
-    <div class="users">
-      <h3>Create new user</h3>
-    </div>
+    <header class="users">
+      <h1>Create new user</h1>
+    </header>
 
-    <div class="create-user-form">
+    <section class="create-user-form">
       <div class="create-user-form-flex">
-        <div class="left">
+        <article class="left">
           <div class="img-container"></div>
-        </div>
-        <div class="right">
+        </article>
+        <article class="right">
           <form action="" method="POST">
             {% csrf_token %}
             <label for="username">Username</label><br />
@@ -61,9 +61,9 @@
               <a href="{% url 'users' %}">Cancel</a>
             </div>
           </form>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
   </section>
 </main>
 {% endblock %}
