@@ -48,9 +48,34 @@
             <td>Total users Created:</td>
             <td>{{users_created}}</td>
           </tr>
+          <tr>
+            <td>Total Managers:</td>
+            <td>{{num_managers}}</td>
+          </tr>
+          <tr>
+            <td>Total Workers:</td>
+            <td>{{num_workers}}</td>
+          </tr>
         </table>
       </div>
     </article>
+  </div>
+
+
+  <h2>Orders with Comments:</h2>
+  <ul>
+    {% for order in orders_with_comments %}
+      <li>Order {{ order.id }} has {{ order.num_comments }} comments.</li>
+    {% endfor %}
+  </ul>
+
+  <div>
+    <h2>Assinged Orders</h2>
+    <ul>
+      {% for user in users %}
+      <li>{{ user.username }}: {{ user.num_orders_assigned }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </main>
 {% endblock %}

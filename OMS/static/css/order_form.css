@@ -79,3 +79,6 @@ form .buttons-container a {
   line-height: 40px;
 }
 
+form p{
+  display: flex;
+}

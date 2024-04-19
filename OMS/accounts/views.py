@@ -8,7 +8,7 @@ user management, and generating reports in a web application.
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import Group
@@ -546,8 +546,15 @@ def reports(request):
     orders_attention_required = orders.filter(status="Attention Required").count()
     orders_completed = orders.filter(status="Complete").count()
 
-    users = User.objects.all()
+    users = User.objects.annotate(num_orders_assigned=Count("assigned_orders"))
+    worker_group = Group.objects.get(name="worker")
+    manager_group = Group.objects.get(name="manager")
+
     users_created = users.count()
+    num_workers = User.objects.filter(groups__in=[worker_group]).count()
+    num_managers = User.objects.filter(groups__in=[manager_group]).count()
+
+    orders_with_comments = Order.objects.annotate(num_comments=Count("comment"))
 
     context = {
         "orders_created": orders_created,
@@ -557,6 +564,10 @@ def reports(request):
         "orders_attention_required": orders_attention_required,
         "orders_completed": orders_completed,
         "users_created": users_created,
+        "num_workers": num_workers,
+        "num_managers": num_managers,
+        "orders_with_comments": orders_with_comments,
+        "users": users,
         "page_title": "Reports",
     }
 

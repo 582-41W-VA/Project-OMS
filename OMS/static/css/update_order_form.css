@@ -93,6 +93,10 @@ form{
   width: 80%;
 }
 
+.form-group {
+  display: flex;
+}
+
 .right-column .form-group label{
   display: inline-block;
   width: 150px;
