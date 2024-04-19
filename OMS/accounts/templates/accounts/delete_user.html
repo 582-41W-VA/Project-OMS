@@ -8,7 +8,7 @@
   <section>{% include 'accounts/users-status.html' %}</section>
   <section class="create-user-main">
     <div class="user-filter">
-      <h3>user details</h3>
+      <h1>user details</h1>
     </div>
 
     <div class="user-view">
@@ -21,7 +21,7 @@
             <img class="user-profile-img" src="{% static 'images/create-user.png' %}" alt="_blank" srcset="" />
           </div>
           <div class="user-info-right">
-            <h3>PROFILE</h3>
+            <h1>PROFILE</h1>
             <hr />
             <p class="delete-user-text">Are you sure you want to delete <br><br><span class="delete-user-title">"{{user.username}}"</span> ?</p>
             <form id="delete-form" action="{% url 'delete_user' user.id %}" method="POST">
