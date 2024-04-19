@@ -44,8 +44,7 @@ input{
 .search-button{
   cursor: pointer;
   border-radius: 10px;
-  border: none;
-  background: none !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .search-button:hover{
@@ -54,6 +53,7 @@ input{
 
 .reset-btn{
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .reset-btn:hover{
@@ -154,13 +154,20 @@ input{
 }
 
 
-.card {
+.user-cards .card {
   background: var(--color-light);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: calc(33.333% - 20px);
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+}
+
+.user-cards .card:hover{
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 15px 20px;
 }
 
 .hidden {

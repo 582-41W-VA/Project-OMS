@@ -6,7 +6,7 @@
 <main>
   <section>{% include 'accounts/users-status.html' %}</section>
   <div class="users">
-  <h3>Users</h3>
+  <h1>Users</h1>
   <form class="user-search"  action="" method="GET">
     {{myFilter.form}}
     <button type="submit" class="search-button"><img src="{% static 'images/search-icon.svg' %}" alt="" title="Search" srcset=""></button>
@@ -17,8 +17,7 @@
   <img src="{% static 'images/grid-icon.svg' %}" class="grid-icon icon" onclick="toggleView()" style="display: inline;" title="Grid view"> <!-- Grid icon for switching to card view -->
   <img src="{% static 'images/list-icon.svg' %}" class="list-icon icon" onclick="toggleView()" style="display: none;" title="List view"> <!-- List icon for switching to list view -->
 </div>
-
-  </div>
+</div>
  
 
   {% if users %}
@@ -38,8 +37,8 @@
         <td>{{i.username}}</td>
         <td>{{i.email}}</td>
         <td>{{i.groups.first.name}}</td>
-        <td><a href="{% url 'view_user' i.pk %}" class="view" title="View User"><i class="fa-solid fa-eye"></i></a></td>
-        <td><a href="{% url 'update_user' i.pk %}" class="update" title="Update User"><i class="fa-regular fa-pen-to-square"></i></a></td>
+        <td><a href="{% url 'view_user' i.pk %}" class="view" title="View User"><img src="{% static 'images/view-icon.svg' %}" alt="" srcset=""></a></td>
+        <td><a href="{% url 'update_user' i.pk %}" class="update" title="Update User"><img src="{% static 'images/edit-icon.svg' %}" alt="" srcset=""></a></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -54,8 +53,8 @@
         <p class="card-text">Role: {{ user.groups.first.name }}</p>
         <p class="card-text">Date Joined: {{user.date_joined}}</p>
         <p class="card-text">Email: {{ user.email }}</p>
-        <a href="{% url 'view_user' user.pk %}" class="view"><i class="fa-solid fa-eye"></i></a>
-        <a href="{% url 'update_user' user.pk %}" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+        <a href="{% url 'view_user' user.pk %}" class="view" title="View User"><img src="{% static 'images/view-icon.svg' %}" alt="" srcset=""></a>
+        <a href="{% url 'update_user' user.pk %}" class="update" title="Update User"><img src="{% static 'images/edit-icon.svg' %}" alt="" srcset=""></a>
       </div>
     </div>
     {% endfor %}
