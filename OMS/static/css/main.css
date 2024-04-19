@@ -427,7 +427,6 @@ th {
 }
 
 .orders-table tr {
-  cursor: pointer;
   background-color: var(--color-light);
   color: var(--color-blue);
   transition: 0.3s;
