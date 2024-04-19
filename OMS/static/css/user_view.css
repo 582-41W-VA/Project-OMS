@@ -7,8 +7,9 @@
   border-radius: 10px;
 }
 
-.user-filter h3 {
+.user-filter h1 {
   text-transform: uppercase;
+  color: var(--color-text-light);
 }
 
 .user-view {
@@ -72,7 +73,7 @@
   object-position: center;
 }
 
-.user-info-right h3 {
+.user-info-right h1 {
   font-size: 2.8rem;
   font-weight: 500;
   text-transform: uppercase;
