@@ -111,7 +111,6 @@ input{
 }
 
 .users-table tr {
-  cursor: pointer;
   background-color: var(--color-light);
   color: #35447d;
   transition: 0.3s;
