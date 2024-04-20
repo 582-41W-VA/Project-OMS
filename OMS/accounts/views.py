@@ -328,14 +328,20 @@ def updateOrder(request, pk):
     - Redirects to the home page after successful form submission.
     """
     order = get_object_or_404(Order, pk=pk)
-    form = OrderForm(instance=order)
+
+    workers_group = Group.objects.filter(name="worker").first()
+    workers = workers_group.user_set.all()
+
     if request.method == "POST":
         form = OrderForm(request.POST, request.FILES, instance=order)
         if form.is_valid():
             form.save()
             return redirect("/")
-    context = {"form": form, "order": order, "page_title": "Update Order"}
+    else:
+        form = OrderForm(instance=order)
+        form.fields["order_assigned_to"].queryset = workers
 
+    context = {"form": form, "order": order, "page_title": "Update Order"}
     return render(request, "accounts/update_order_form.html", context)
 
 
@@ -546,7 +552,9 @@ def reports(request):
     orders_attention_required = orders.filter(status="Attention Required").count()
     orders_completed = orders.filter(status="Complete").count()
 
-    users = User.objects.annotate(num_orders_assigned=Count("assigned_orders"))
+    users = User.objects.filter(groups__name="worker").annotate(
+        num_orders_assigned=Count("assigned_orders")
+    )
     worker_group = Group.objects.get(name="worker")
     manager_group = Group.objects.get(name="manager")
 
