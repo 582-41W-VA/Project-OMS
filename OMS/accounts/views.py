@@ -159,7 +159,7 @@ def viewOrder(request, pk):
         * qr_code_url: URL for the QR code image.
     """
     order = get_object_or_404(Order, pk=pk)
-    comments = Comment.objects.filter(order=order)
+    comments = Comment.objects.filter(order=order).order_by("-date_created")
 
     base_url = request.build_absolute_uri("/").rstrip("/")
     path = request.get_full_path()
