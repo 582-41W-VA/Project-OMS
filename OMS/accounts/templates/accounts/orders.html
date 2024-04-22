@@ -97,7 +97,7 @@
       <span>Priority:</span> {{ order.priority }}
     </p>
       <p class="card-text {% if order.status == 'Attention Required' %}status-attention{% endif %}">
-      <span>Status</span> {{ order.status }}
+      <span>Status:</span> {{ order.status }}
       </p>
 
       <a href="{% url 'view_order' order.pk %}" class="view" title="View Order"><img src="{% static 'images/view-icon.svg' %}" alt="" srcset=""></a>
