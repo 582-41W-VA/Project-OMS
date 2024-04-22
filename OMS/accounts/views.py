@@ -159,7 +159,7 @@ def viewOrder(request, pk):
         * qr_code_url: URL for the QR code image.
     """
     order = get_object_or_404(Order, pk=pk)
-    comments = Comment.objects.filter(order=order)
+    comments = Comment.objects.filter(order=order).order_by("-date_created")
 
     base_url = request.build_absolute_uri("/").rstrip("/")
     path = request.get_full_path()
@@ -197,11 +197,17 @@ def createOrder(request):
         * page_title: Title for the page.
     """
     form = OrderForm()
+
+    workers_group = Group.objects.filter(name="worker").first()
+    workers = workers_group.user_set.all()
+
     if request.method == "POST":
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("/")
+
+    form.fields["order_assigned_to"].queryset = workers
 
     context = {"form": form, "page_title": "Create Order"}
 
