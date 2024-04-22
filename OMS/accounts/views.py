@@ -197,11 +197,17 @@ def createOrder(request):
         * page_title: Title for the page.
     """
     form = OrderForm()
+
+    workers_group = Group.objects.filter(name="worker").first()
+    workers = workers_group.user_set.all()
+
     if request.method == "POST":
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("/")
+
+    form.fields["order_assigned_to"].queryset = workers
 
     context = {"form": form, "page_title": "Create Order"}
 

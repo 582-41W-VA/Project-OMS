@@ -147,6 +147,11 @@ legend {
     text-transform: capitalize;
 }
 
+.order-info-right textarea {
+    padding: 10px;
+    line-height: 1.6rem;
+}
+
 .submit-btn {
     border: none;
     width: 100px;
@@ -171,9 +176,16 @@ legend {
 }
 
 .order-comment {
+    width: 100%;
     height: auto;
-    overflow: scroll;
-    font-size: 1.1rem;
+    overflow: auto;
+    font-size:.9rem;
+    line-height: 1.5rem;
+}
+
+.order-comment::-webkit-scrollbar {
+    scrollbar-width: none;
+    display: none;
 }
 
 .comment-flex {
